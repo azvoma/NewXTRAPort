@@ -3,64 +3,368 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harrods Pre-Order Feature | Andrew Zvoma</title>
+<title>Harrods Pre-Order Feature Design | Andrew Zvoma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+/* ── page-specific extras ── */
+.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
+.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
+.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
+.before-after{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
+.ba-col{background:#fff;padding:1.25rem}
+.ba-col h4{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:1rem}
+.ba-row{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.75rem}
+.ba-val{font-size:1.4rem;font-weight:800;line-height:1}
+.ba-val.red{color:#dc2626}.ba-val.green{color:#16a34a}.ba-val.amber{color:#d97706}
+.ba-lbl{font-size:.8rem;color:var(--text-2)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
+.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
+.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
+.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
+.findings-list{counter-reset:find;display:grid;gap:.75rem;margin:1rem 0}
+.finding{display:grid;grid-template-columns:28px 1fr;gap:.75rem;align-items:start;padding:.9rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.find-num{counter-increment:find;font-size:.75rem;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.find-text{font-size:.875rem;color:var(--text-2);line-height:1.6}
+.learnings{display:grid;gap:.65rem;margin:1rem 0}
+.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
+.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.learn-text strong{font-weight:700;color:var(--text)}
+.validated-list{display:grid;gap:.5rem;margin:1rem 0}
+.val-item{display:flex;gap:.6rem;font-size:.875rem;color:var(--text-2);line-height:1.6;padding:.6rem .85rem;background:var(--bg-soft);border-radius:var(--r)}
+.val-item::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.next-steps-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:1rem 0}
+.ns-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
+.ns-icon{font-size:1rem;margin-bottom:.3rem}
+.ns-title{font-size:.82rem;font-weight:700;color:var(--text)}
+@media(max-width:640px){
+  .features-grid{grid-template-columns:1fr 1fr}
+  .before-after{grid-template-columns:1fr}
+  .next-steps-grid{grid-template-columns:1fr}
+  .dp-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
 </head>
 <body>
 <div id="nav-slot"></div>
+
 <div class="cs-detail">
   <a class="cs-back" href="index.html">← Back to Case Studies</a>
+
+  <!-- ── HERO ── -->
   <div class="cs-hero">
     <span class="cs-tag">Case Study · 8 Weeks · UI/UX Designer</span>
-    <h1 class="cs-page-title">Harrods Pre-Order Feature</h1>
-    <p class="cs-lead">Designed a luxury-grade pre-order experience that allowed high-intent customers to reserve coveted products before official release — eliminating the frustration of missed launches and reducing support burden by 85%.</p>
-    <div class="cs-pills"><span class="cs-pill blue">Figma · Sketch · Miro</span><span class="cs-pill green">85% Reduction in Support Queries</span><span class="cs-pill green">WCAG 2.2 AA</span><span class="cs-pill ">Luxury Retail</span></div>
-    <div class="cs-stats"><div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">8 Weeks</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UI/UX Designer</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Sketch · Miro · Zeplin</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Team</div><div class="cs-stat-val">PM · Tech Lead · QA Engineer</div></div></div>
+    <h1 class="cs-page-title">Harrods Pre-Order Feature Design</h1>
+    <p class="cs-lead">Effortless, luxury-grade way to reserve high-demand products. Designed a luxury-grade pre-order experience that allows customers to reserve products before official release — improving the shopping experience while enabling Harrods to forecast demand more accurately and manage inventory with confidence.</p>
+
+    <div class="cs-pills">
+      <span class="cs-pill blue">Figma</span>
+      <span class="cs-pill blue">Sketch</span>
+      <span class="cs-pill blue">FigJam · Miro</span>
+      <span class="cs-pill blue">HTML/CSS · JavaScript · Zeplin</span>
+      <span class="cs-pill green">85% Reduction in Support Queries</span>
+      <span class="cs-pill green">WCAG 2.2 AA Compliant</span>
+      <span class="cs-pill">Luxury Retail</span>
+      <span class="cs-pill">Agile Team</span>
+    </div>
+
+    <div class="cs-stats">
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">8 Weeks</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UI/UX Designer</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Sketch · FigJam · Miro · Zeplin</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Team</div><div class="cs-stat-val">4 members (design-led)</div></div>
+    </div>
   </div>
-  <div class="cs-hero-img"><img src="../assets/images/harrods_hero.png" alt="Harrods pre-order — Shopping Bag, Order Details, and Confirmation screens" loading="lazy"></div>
+
+  <!-- hero image -->
+  <div class="cs-hero-img">
+    <img src="../assets/images/harrods_hero.png" alt="Harrods Pre-Order Feature — Shopping Bag, Order Details, and Confirmation screens" loading="lazy">
+  </div>
+
+  <!-- ── BODY ── -->
   <div class="cs-layout">
     <div class="cs-main">
 
+      <!-- THE CHALLENGE -->
       <div class="cs-block">
-        <h2 class="cs-h2">A missing capability costing loyalty and revenue</h2>
-        <p class="cs-p">Harrods had no pre-order capability. For limited-edition and high-demand products — where exclusivity and guaranteed access are core to the luxury proposition — this was a significant gap. High-intent customers were repeatedly missing launches, leading to frustration, repeated availability-checking, and missed conversion.</p>
-        <div class="cs-quote"><p>I missed out on the limited-edition bag I wanted because I didn't know when it would be available. By the time I heard about it, everything was sold out. There should be a way to reserve items in advance.</p><cite>— Emma Thompson, Luxury Shopper</cite></div>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">Research &amp; Strategy</h2>
-        <div class="cs-img-2"><img src="https://a2zee.uk/_astro/customer_interview_report.Bw4ExrT1.png" alt="Customer interview report" loading="lazy"><img src="https://a2zee.uk/_astro/competitive_analysis.C16cib4v.png" alt="Competitive analysis" loading="lazy"></div>
-        <div class="cs-img"><img src="https://a2zee.uk/_astro/user_persona.EPfrtPlW.png" alt="High-value luxury shopper persona" loading="lazy"></div>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">Design</h2>
-        <div class="cs-img-2"><img src="https://a2zee.uk/_astro/user_flow.CHgfNvwq.png" alt="User flow diagram" loading="lazy"><img src="https://a2zee.uk/_astro/concept_sketches.B0nuivA4.png" alt="Concept sketches" loading="lazy"></div>
-        <div class="cs-img"><img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DC63vovm.png" alt="Design evolution wireframes" loading="lazy"></div>
-        <div class="cs-img-4" style="margin-top:1rem">
-          <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.2knc-v0g.png" alt="Product listing" loading="lazy">
-          <img src="https://a2zee.uk/_astro/2%20copy%20copy%20copy%20copy%20copy.CyP57Ybh.png" alt="Product detail with pre-order" loading="lazy">
-          <img src="https://a2zee.uk/_astro/3%20copy%20copy%20copy%20copy%20copy.DJ5VHS7V.png" alt="Order Details" loading="lazy">
-          <img src="https://a2zee.uk/_astro/4%20copy%20copy%20copy%20copy%20copy.DOwlhcGY.png" alt="Shopping Bag and checkout" loading="lazy">
+        <h2 class="cs-h2">The Challenge</h2>
+        <div class="cs-quote">
+          <p>"I missed out on the limited-edition bag I wanted because I didn't know when it would be available. By the time I heard about it, everything was sold out. There should be a way to reserve items in advance."</p>
+          <cite>— Emma Thompson, Luxury Shopper</cite>
         </div>
-        <div class="cs-img"><img src="https://a2zee.uk/_astro/5%20copy%20copy%20copy.CIpO54rr.png" alt="Shipment confirmation email" loading="lazy"></div>
+        <p class="cs-p">Harrods did not offer a pre-order capability across its website or mobile app. Through early analysis, I identified this gap as a key driver of customer frustration and missed revenue, particularly for high-demand and limited-edition products.</p>
+        <h3 class="cs-h3">The Problem I Identified</h3>
+        <ul class="cs-ul">
+          <li>Customers frequently missed high-demand items due to lack of early access</li>
+          <li>No digital mechanism existed to capture demand before launch</li>
+          <li>Customers were forced to repeatedly check availability, increasing frustration</li>
+          <li>Missed conversion opportunities reduced both revenue and loyalty</li>
+        </ul>
+        <h3 class="cs-h3">Solution Approach I Developed</h3>
+        <p class="cs-p">I designed and validated a luxury-grade pre-order experience that allows customers to reserve products before official release — improving the shopping experience while enabling Harrods to forecast demand more accurately and manage inventory with confidence.</p>
       </div>
+
+      <!-- DESIGN PROCESS -->
       <div class="cs-block">
-        <h2 class="cs-h2">Outcomes</h2>
-        <div class="cs-outcomes"><div class="cs-outcome"><div class="cs-outcome-val">85%</div><div class="cs-outcome-label">Reduction in support queries</div></div><div class="cs-outcome"><div class="cs-outcome-val">100%</div><div class="cs-outcome-label">Task completion in testing</div></div><div class="cs-outcome"><div class="cs-outcome-val">AA</div><div class="cs-outcome-label">WCAG 2.2 AA compliance</div></div><div class="cs-outcome"><div class="cs-outcome-val">✓</div><div class="cs-outcome-label">Demand forecasting unlocked</div></div></div>
-        <div class="cs-test"><p>"Andrew brought a level of sophistication to our pre-order feature that truly reflects the Harrods brand. He balanced luxury aesthetics with functional clarity — the result exceeded our expectations."</p><div class="cs-test-name">James Richardson</div><div class="cs-test-role">Senior Product Manager, Harrods Digital</div></div>
+        <h2 class="cs-h2">Design Process</h2>
+        <div class="dp-grid">
+          <div class="dp-step"><span class="dp-num">01</span><div class="dp-label">Research</div></div>
+          <div class="dp-step"><span class="dp-num">02</span><div class="dp-label">Insights</div></div>
+          <div class="dp-step"><span class="dp-num">03</span><div class="dp-label">Ideation</div></div>
+          <div class="dp-step"><span class="dp-num">04</span><div class="dp-label">Solution</div></div>
+          <div class="dp-step"><span class="dp-num">05</span><div class="dp-label">Results</div></div>
+        </div>
       </div>
-      <a class="cs-next" href="surgeryprep.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">SurgeryPrep — Mobile companion for surgical patients →</div></a>
-    </div>
-    <aside class="cs-sidebar"><div class="cs-sb-box"><div class="cs-sb-title">My Role</div><div class="cs-sb-item">UI/UX Designer</div></div><div class="cs-sb-box"><div class="cs-sb-title">Team</div><div class="cs-sb-item">Product Manager</div><div class="cs-sb-item">Tech Lead</div><div class="cs-sb-item">QA Engineer</div></div><div class="cs-sb-box"><div class="cs-sb-title">Tools</div><div class="cs-sb-item">Figma · Sketch · Miro</div><div class="cs-sb-item">Zeplin · HTML/CSS/JS</div></div><div class="cs-sb-box"><div class="cs-sb-title">Results</div><div class="cs-sb-item">85% reduction in support queries</div><div class="cs-sb-item">100% task completion</div><div class="cs-sb-item">WCAG 2.2 AA compliant</div></div></aside>
-  </div>
-</div>
+
+      <!-- 01 RESEARCH -->
+      <div class="cs-block">
+        <span class="cs-h3" style="color:var(--blue);font-size:.75rem">01</span>
+        <h2 class="cs-h2">Research: Understanding Luxury Shopping Behaviour</h2>
+        <h3 class="cs-h3">What I Needed to Discover</h3>
+        <p class="cs-p">I needed to understand how luxury customers perceive early access and exclusivity, convenience without compromising prestige, and trust and reassurance when purchasing unreleased products. I also evaluated whether pre-ordering could deliver business value without diluting the premium experience Harrods customers expect.</p>
+        <div class="cs-quote">
+          <p>"Luxury shopping should be effortless and exclusive. When I want something, I expect access before everyone else."</p>
+          <cite>— Victoria Sterling, VIP Customer</cite>
+        </div>
+        <h3 class="cs-h3">Research Approach</h3>
+        <p class="cs-p">Working in an agile, multidisciplinary environment with product, tech, and commercial teams, I used a mixed-method approach:</p>
+        <ul class="cs-ul">
+          <li><strong>Customer Surveys &amp; Interviews:</strong> Conducted qualitative research with Harrods customers across segments, revealing strong demand for guaranteed access and transparency.</li>
+          <li><strong>User Journey Analysis:</strong> Mapped limited-edition purchase journeys to identify friction points, anxiety moments, and drop-off risks using analytics data.</li>
+          <li><strong>Competitive Analysis:</strong> Analysed how other luxury retailers handle pre-ordering, identifying gaps and differentiation opportunities.</li>
+          <li><strong>Business Impact Assessment:</strong> Evaluated how pre-ordering could improve inventory planning, revenue forecasting, and customer retention.</li>
+          <li><strong>Analytics Review:</strong> Examined existing user behaviour patterns and conversion metrics to inform iterative design decisions.</li>
+        </ul>
+        <h3 class="cs-h3">Research Synthesis</h3>
+        <div class="cs-img-2">
+          <img src="https://az-astro.netlify.app/_astro/customer_interview_report.Bw4ExrT1.png" alt="Customer Interview Report" loading="lazy">
+          <img src="https://az-astro.netlify.app/_astro/competitive_analysis.C16cib4v.png" alt="Competitive Analysis" loading="lazy">
+        </div>
+        <h3 class="cs-h3">Key Findings</h3>
+        <div class="findings-list">
+          <div class="finding"><div class="find-num">1</div><div class="find-text">Customers value <strong>guaranteed access</strong> to limited releases over launch-day competition</div></div>
+          <div class="finding"><div class="find-num">2</div><div class="find-text">Pre-ordering removes the need for constant monitoring, <strong>reducing frustration</strong></div></div>
+          <div class="finding"><div class="find-num">3</div><div class="find-text">High-value customers appreciate the ability to <strong>plan and budget</strong> purchases in advance</div></div>
+        </div>
+      </div>
+
+      <!-- 02 INSIGHTS -->
+      <div class="cs-block">
+        <span class="cs-h3" style="color:var(--blue);font-size:.75rem">02</span>
+        <h2 class="cs-h2">Insights: Defining the Luxury Experience Challenge</h2>
+        <h3 class="cs-h3">What I Needed to Solve</h3>
+        <p class="cs-p">I synthesised research into a core challenge centred on <strong>Security</strong> (confidence in reservation), <strong>Simplicity</strong> (effortless flow), and <strong>Exclusivity</strong> (service-oriented, not transactional). The solution needed to feel like a luxury service, not a standard ecommerce feature.</p>
+        <h3 class="cs-h3">Design Questions</h3>
+        <ul class="cs-ul">
+          <li>How might we help customers secure high-demand items without eroding Harrods' premium experience?</li>
+          <li>How might we reduce missed purchase opportunities for limited products?</li>
+          <li>How might pre-ordering feel seamless and luxurious rather than mechanical?</li>
+          <li>How might demand data improve inventory planning and customer satisfaction?</li>
+        </ul>
+        <h3 class="cs-h3">Problem Statement</h3>
+        <p class="cs-p">High-intent luxury customers lacked early access and transparency for limited-edition products, resulting in missed purchases, frustration, and lost loyalty. A pre-order experience needed to restore confidence while reinforcing Harrods' exclusivity.</p>
+        <p class="cs-p">I anchored design decisions around a <strong>high-value luxury shopper persona</strong> to maintain focus on premium expectations.</p>
+        <div class="cs-img">
+          <img src="https://az-astro.netlify.app/_astro/user_persona.EPfrtPlW.png" alt="High-Value Luxury Shopper Persona" loading="lazy">
+        </div>
+      </div>
+
+      <!-- 03 IDEATION -->
+      <div class="cs-block">
+        <span class="cs-h3" style="color:var(--blue);font-size:.75rem">03</span>
+        <h2 class="cs-h2">Ideation: From Problems to Elegant Solutions</h2>
+        <h3 class="cs-h3">How I Explored Solutions</h3>
+        <p class="cs-p">I generated multiple concepts using structured wireframing and prototyping techniques in Figma, then evaluated them against user impact, technical feasibility, alignment with luxury experience standards, and accessibility requirements (WCAG 2.2 AA compliance). Working collaboratively in an agile sprint cycle, my goal was to <strong>reduce uncertainty and effort without adding complexity</strong>.</p>
+        <h3 class="cs-h3">Concept Exploration</h3>
+        <p class="cs-p">Using Crazy 8s and rapid sketching, I explored different reservation models, then applied a value-vs-effort matrix to prioritise concepts that enhanced exclusivity and integrated seamlessly into existing shopping flows.</p>
+        <h3 class="cs-h3">User Flow Design</h3>
+        <div class="cs-img-2">
+          <img src="https://az-astro.netlify.app/_astro/user_flow.CHgfNvwq.png" alt="User Flow Diagram" loading="lazy">
+          <img src="https://az-astro.netlify.app/_astro/concept_sketches.B0nuivA4.png" alt="Concept Sketches" loading="lazy">
+        </div>
+        <h3 class="cs-h3">Core Features I Prioritised</h3>
+        <div class="features-grid">
+          <div class="feat-card"><div class="feat-icon">🔔</div><div class="feat-title">Exclusive access notifications</div><div class="feat-desc">VIP-style alerts for upcoming releases</div></div>
+          <div class="feat-card"><div class="feat-icon">🛒</div><div class="feat-title">Seamless reservation</div><div class="feat-desc">Simple with transparent delivery expectations</div></div>
+          <div class="feat-card"><div class="feat-icon">📦</div><div class="feat-title">Real-time order tracking</div><div class="feat-desc">From reservation to fulfilment</div></div>
+          <div class="feat-card"><div class="feat-icon">💳</div><div class="feat-title">Flexible payment options</div><div class="feat-desc">Hold or pay in full</div></div>
+          <div class="feat-card"><div class="feat-icon">♡</div><div class="feat-title">Wishlist integration</div><div class="feat-desc">Signal interest for future releases</div></div>
+          <div class="feat-card"><div class="feat-icon">🎩</div><div class="feat-title">Concierge support</div><div class="feat-desc">Personal assistance for high-value customers</div></div>
+        </div>
+        <h3 class="cs-h3">Information Architecture</h3>
+        <p class="cs-p">I integrated pre-ordering into Harrods' existing structure to ensure intuitive navigation and minimal cognitive load.</p>
+        <div class="cs-img">
+          <img src="https://az-astro.netlify.app/_astro/information_architecture.DHE4HRoO.png" alt="Information Architecture" loading="lazy">
+        </div>
+      </div>
+
+      <!-- 04 SOLUTION -->
+      <div class="cs-block">
+        <span class="cs-h3" style="color:var(--blue);font-size:.75rem">04</span>
+        <h2 class="cs-h2">Solution: Design &amp; Validation</h2>
+        <h3 class="cs-h3">How My Solution Came to Life</h3>
+        <p class="cs-p">Working in an agile, multidisciplinary team environment, I evolved concepts through iterative design and testing cycles. I delivered a <strong>mobile-first, accessible experience</strong> that balanced luxury aesthetics with clarity and usability. The design process involved close collaboration with developers to ensure technical feasibility and proper implementation using HTML, CSS, and JavaScript.</p>
+        <p class="cs-p">Every decision aligned with Harrods' brand standards, WCAG 2.2 AA accessibility guidelines, and customer expectations validated through user research.</p>
+        <h3 class="cs-h3">Design Evolution</h3>
+        <p class="cs-p">Using Figma and Sketch as my primary prototyping tools, I started with low-fidelity wireframes to validate core user flows and interaction patterns, information hierarchy and visual structure, terminology clarity through user testing, and accessibility considerations including screen reader compatibility and keyboard navigation.</p>
+        <div class="cs-img">
+          <img src="https://az-astro.netlify.app/_astro/1.CJa0_t0W.png" alt="Design Evolution Wireframes" loading="lazy">
+        </div>
+        <h3 class="cs-h3">High-Fidelity Mobile Experience</h3>
+        <p class="cs-p">The final designs delivered a complete end-to-end mobile experience — from discovery to confirmation — with clear product availability messaging, transparent pre-order details, reassuring confirmation and shipment updates, and WCAG 2.2 AA accessible interactive elements.</p>
+        <div class="cs-img-2" style="margin-bottom:.75rem">
+          <img src="https://az-astro.netlify.app/_astro/1.CJa0_t0W.png" alt="Harrods product listing" loading="lazy">
+          <img src="https://az-astro.netlify.app/_astro/2.BXoRSYmI.png" alt="Product detail with pre-order" loading="lazy">
+        </div>
+        <div class="cs-img-2" style="margin-bottom:.75rem">
+          <img src="https://az-astro.netlify.app/_astro/3.B-2ANGad.png" alt="Order Details page" loading="lazy">
+          <img src="https://az-astro.netlify.app/_astro/4.BW4uVsRX.png" alt="Shopping Bag and secure checkout" loading="lazy">
+        </div>
+        <div class="cs-img">
+          <img src="https://az-astro.netlify.app/_astro/5.gT3ZbKTb.png" alt="Harrods shipment confirmation" loading="lazy">
+        </div>
+        <h3 class="cs-h3">What I Validated</h3>
+        <div class="validated-list">
+          <div class="val-item">100% task completion across test users in moderated usability sessions</div>
+          <div class="val-item">Users consistently described the experience as "intuitive" and "premium"</div>
+          <div class="val-item">Clear understanding of pre-order terms and timelines</div>
+          <div class="val-item">Seamless integration with the existing Harrods shopping experience</div>
+          <div class="val-item">Successful accessibility testing with assistive technologies (screen readers, keyboard-only navigation)</div>
+          <div class="val-item">Positive feedback from stakeholders across all levels of the organisation</div>
+        </div>
+        <h3 class="cs-h3">Improvements I Made</h3>
+        <ul class="cs-ul">
+          <li>Simplified product detail layouts based on user testing insights</li>
+          <li>Strengthened CTA hierarchy using interaction design principles</li>
+          <li>Enhanced accessibility features including improved colour contrast and focus indicators</li>
+          <li>Refined notification timing and preferences informed by user behaviour data</li>
+          <li>Clarified payment terminology through A/B testing proposals</li>
+          <li>Optimised mobile interactions in collaboration with the development team</li>
+        </ul>
+      </div>
+
+      <!-- BEFORE & AFTER -->
+      <div class="cs-block">
+        <h2 class="cs-h2">Before &amp; After Metrics</h2>
+        <div class="before-after">
+          <div class="ba-col">
+            <h4>Before</h4>
+            <div class="ba-row"><div class="ba-val red">0%</div><div class="ba-lbl">No pre-order capability</div></div>
+            <div class="ba-row"><div class="ba-val red">High</div><div class="ba-lbl">Customer frustration with sold-out items</div></div>
+            <div class="ba-row"><div class="ba-val red">Low</div><div class="ba-lbl">Demand forecasting accuracy</div></div>
+            <div class="ba-row"><div class="ba-val red">Manual</div><div class="ba-lbl">Waitlist management process</div></div>
+          </div>
+          <div class="ba-col">
+            <h4>After</h4>
+            <div class="ba-row"><div class="ba-val green">Enabled</div><div class="ba-lbl">Seamless pre-order experience</div></div>
+            <div class="ba-row"><div class="ba-val green">85%</div><div class="ba-lbl">Reduction in customer support queries</div></div>
+            <div class="ba-row"><div class="ba-val green">Improved</div><div class="ba-lbl">Demand forecasting and inventory planning</div></div>
+            <div class="ba-row"><div class="ba-val green">Automated</div><div class="ba-lbl">Streamlined pre-order workflow</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLIENT TESTIMONIAL -->
+      <div class="cs-block">
+        <h2 class="cs-h2">Client Testimonial</h2>
+        <div class="cs-test">
+          <p>"Andrew brought a level of sophistication to our pre-order feature that truly reflects the Harrods brand. He balanced luxury aesthetics with functional clarity, working closely with our stakeholders to navigate strict brand guidelines. The result exceeded our expectations — customers love the seamless experience, and our team has seen a dramatic reduction in manual processing. His attention to detail and collaborative approach made all the difference."</p>
+          <div class="cs-test-name">James Richardson</div>
+          <div class="cs-test-role">Senior Product Manager, Harrods Digital</div>
+        </div>
+      </div>
+
+      <!-- 05 RESULTS -->
+      <div class="cs-block">
+        <span class="cs-h3" style="color:var(--blue);font-size:.75rem">05</span>
+        <h2 class="cs-h2">Results: Impact &amp; Next Steps</h2>
+        <h3 class="cs-h3">What I Achieved</h3>
+        <p class="cs-p">I designed a luxury-grade pre-order experience that reduced customer frustration, unlocked demand forecasting opportunities, and increased confidence and conversion potential. This project demonstrated how <strong>UX strategy can enhance luxury retail while delivering measurable business value</strong>.</p>
+        <h3 class="cs-h3">Key Learnings</h3>
+        <div class="learnings">
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Luxury requires simplicity</strong> — removing friction enhances perceived value</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Early access drives loyalty</strong> — exclusivity strengthens emotional connection</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Transparency builds trust</strong> — clarity increases confidence and conversion</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Accessibility is essential</strong> — WCAG 2.2 AA compliance ensures inclusive experiences without compromising luxury aesthetics</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Agile collaboration drives success</strong> — working in multidisciplinary teams with developers accelerates delivery and quality</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Data-informed iteration</strong> — user research and analytics are crucial for validating design decisions</div></div>
+          <div class="learning"><div class="learn-bullet"></div><div class="learn-text"><strong>Stakeholder communication matters</strong> — ability to influence and align stakeholders at all levels is key to successful outcomes</div></div>
+        </div>
+        <h3 class="cs-h3">Next Steps I Recommended</h3>
+        <div class="next-steps-grid">
+          <div class="ns-card"><div class="ns-icon">🚀</div><div class="ns-title">Launch a pilot within a select product category</div></div>
+          <div class="ns-card"><div class="ns-icon">📊</div><div class="ns-title">Track conversion rates and demand-forecast accuracy</div></div>
+          <div class="ns-card"><div class="ns-icon">🧪</div><div class="ns-title">A/B test messaging and flow variations</div></div>
+          <div class="ns-card"><div class="ns-icon">📱</div><div class="ns-title">Expand to desktop and in-store kiosks</div></div>
+        </div>
+        <h3 class="cs-h3">Final Reflection</h3>
+        <p class="cs-p">Through the Harrods pre-order feature, I demonstrated how strategic UX design can elevate luxury retail experiences while delivering tangible business outcomes. By focusing on customer empowerment rather than transaction speed, I designed a service that reinforced Harrods' commitment to exclusivity and care.</p>
+        <div class="cs-quote">
+          <p>"This is exactly what luxury shopping should feel like — effortless and exclusive."</p>
+        </div>
+        <p class="cs-p">This project reinforced my belief that <strong>great product design lives at the intersection of customer desire and business strategy</strong>.</p>
+      </div>
+
+      <a class="cs-next" href="surgeryprep.html">
+        <span class="cs-next-lbl">Next Case Study</span>
+        <div class="cs-next-title">SurgeryPrep — Personalised surgical guidance to reduce patient anxiety →</div>
+      </a>
+
+    </div><!-- /cs-main -->
+
+    <!-- SIDEBAR -->
+    <aside class="cs-sidebar">
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">My Role</div>
+        <div class="cs-sb-item">UI/UX Designer</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Team Size</div>
+        <div class="cs-sb-item">4 members (design-led)</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Team</div>
+        <div class="cs-sb-item">UX/UI Designer (Me)</div>
+        <div class="cs-sb-item">Product Manager</div>
+        <div class="cs-sb-item">Tech Lead</div>
+        <div class="cs-sb-item">QA Engineer</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Tools Used</div>
+        <div class="cs-sb-item">Figma · Sketch · FigJam</div>
+        <div class="cs-sb-item">Miro · HTML/CSS · JavaScript</div>
+        <div class="cs-sb-item">Zeplin</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Key Outcomes</div>
+        <div class="cs-sb-item">85% reduction in support queries</div>
+        <div class="cs-sb-item">100% task completion rate</div>
+        <div class="cs-sb-item">WCAG 2.2 AA compliant</div>
+        <div class="cs-sb-item">Demand forecasting unlocked</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Standards</div>
+        <div class="cs-sb-item">WCAG 2.2 AA Accessibility</div>
+        <div class="cs-sb-item">Mobile-first responsive design</div>
+        <div class="cs-sb-item">Luxury brand guidelines</div>
+      </div>
+    </aside>
+
+  </div><!-- /cs-layout -->
+</div><!-- /cs-detail -->
+
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>
   <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
   <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
-</div><div id="footer-slot"></div>
+</div>
+
+<div id="footer-slot"></div>
 <script src="../assets/js/shared.js"></script>
 </body>
 </html>
