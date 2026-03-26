@@ -48,16 +48,16 @@
 /* section divider */
 .ed-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
 
-/* smaller research images — 70% width centred */
+/* research images — full width, properly visible */
 .img-sm {
-  width: 70%; margin: 1.5rem auto;
+  width: 100%; margin: 1.75rem 0;
   border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border);
   display: block;
 }
 .img-sm img { width: 100%; display: block; }
 .img-sm-2 {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  width: 70%; margin: 1.5rem auto;
+  width: 100%; margin: 1.75rem 0;
 }
 .img-sm-2 img { width: 100%; border-radius: var(--r-lg); border: 1px solid var(--border); display: block; }
 
@@ -90,54 +90,79 @@
 .feat-row-title { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: .15rem; }
 .feat-row-desc  { font-size: .82rem; color: var(--text-3); line-height: 1.5; }
 
-/* ── scrollable phone frames ── */
+/* ── scrollable phone frames — natural phone proportions ── */
 .phone-showcase {
-  display: flex; gap: 1.25rem; margin: 1.75rem 0;
+  display: flex; gap: 1.5rem; margin: 2rem 0;
   align-items: flex-start;
+  overflow-x: auto; padding-bottom: .5rem;
 }
+.phone-showcase::-webkit-scrollbar { height: 4px; }
+.phone-showcase::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
+
 .phone-device {
-  flex: 1; display: flex; flex-direction: column; align-items: center;
+  flex: 0 0 calc(20% - 1.2rem);
+  min-width: 160px;
+  display: flex; flex-direction: column; align-items: center;
 }
+
+/* outer shell — slim, like reference image */
 .phone-shell {
-  background: #0a0a0a;
-  border-radius: 34px;
-  padding: 12px 10px;
-  box-shadow: 0 0 0 1.5px #2a2a2a, 0 8px 32px rgba(0,0,0,.28);
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 10px 8px;
+  box-shadow:
+    0 0 0 1px #333,
+    inset 0 0 0 1px #000,
+    0 12px 40px rgba(0,0,0,.35);
   width: 100%;
   position: relative;
 }
-/* notch bar */
+
+/* status bar area */
 .phone-shell::before {
   content: '';
   display: block;
-  width: 80px; height: 14px;
-  background: #0a0a0a;
-  border-radius: 0 0 10px 10px;
-  margin: 0 auto 6px;
+  width: 72px; height: 20px;
+  background: #1a1a1a;
+  border-radius: 0 0 14px 14px;
+  margin: 0 auto 4px;
+  position: relative; z-index: 2;
 }
+
+/* side buttons */
+.phone-shell::after {
+  content: '';
+  position: absolute;
+  right: -3px; top: 80px;
+  width: 3px; height: 60px;
+  background: #2a2a2a; border-radius: 0 2px 2px 0;
+}
+
+/* scrollable screen viewport */
 .phone-screen {
-  border-radius: 22px;
+  border-radius: 30px;
   overflow: hidden;
-  height: 340px;
+  height: 420px;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  position: relative;
   background: #fff;
+  position: relative;
 }
 .phone-screen::-webkit-scrollbar { display: none; }
 .phone-screen img { width: 100%; display: block; }
+
 .phone-caption {
-  font-size: .72rem; color: var(--text-3); text-align: center;
-  margin-top: .65rem; line-height: 1.4; font-weight: 500;
+  font-size: .72rem; color: var(--text-2); text-align: center;
+  margin-top: .7rem; line-height: 1.4; font-weight: 600;
 }
 /* scroll hint */
 .scroll-hint {
   display: flex; align-items: center; justify-content: center; gap: .35rem;
-  font-size: .68rem; color: var(--text-4); margin-top: .3rem;
+  font-size: .65rem; color: var(--text-4); margin-top: .2rem;
 }
-.scroll-hint svg { width: 12px; height: 12px; stroke: var(--text-4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.scroll-hint svg { width: 11px; height: 11px; stroke: var(--text-4); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
 /* outcomes row */
 .outcomes-row {
@@ -174,10 +199,10 @@
   .cs-overview { grid-template-columns: 1fr 1fr; }
   .insight-grid { grid-template-columns: 1fr 1fr; }
   .img-sm, .img-sm-2 { width: 100%; }
-  .phone-showcase { gap: .75rem; }
-  .phone-screen { height: 260px; }
-  .phone-shell { border-radius: 26px; }
-  .phone-shell::before { width: 60px; height: 12px; }
+  .phone-device { flex: 0 0 calc(45% - .75rem); min-width: 130px; }
+  .phone-screen { height: 340px; }
+  .phone-shell { border-radius: 32px; }
+  .phone-shell::before { width: 56px; height: 16px; }
   .outcomes-row { grid-template-columns: 1fr 1fr; }
   .ba-table { grid-template-columns: 1fr; }
 }
