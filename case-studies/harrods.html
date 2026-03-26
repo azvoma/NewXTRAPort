@@ -110,36 +110,36 @@
 .phone-showcase::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 2px; }
 
 .phone-device {
-  flex: 0 0 155px;
+  flex: 0 0 148px;
   display: flex; flex-direction: column; align-items: center;
 }
 
-/* thick black bezel matching reference */
+/* thin bezel matching reference — border only, no thick padding */
 .phone-shell {
   background: #111;
-  border-radius: 36px;
-  padding: 14px 12px;
-  box-shadow: 0 0 0 2px #222, 0 8px 28px rgba(0,0,0,.3);
+  border-radius: 28px;
+  padding: 6px 5px;
+  box-shadow: 0 0 0 1px #1a1a1a, 0 6px 20px rgba(0,0,0,.25);
   width: 100%;
   position: relative;
 }
 
-/* notch pill at top */
+/* slim notch pill */
 .phone-shell::before {
   content: '';
   display: block;
-  width: 52px; height: 14px;
+  width: 40px; height: 10px;
   background: #111;
-  border-radius: 0 0 10px 10px;
-  margin: 0 auto 5px;
+  border-radius: 0 0 8px 8px;
+  margin: 0 auto 3px;
 }
 
-/* screen viewport — tall enough to feel natural, scrollable */
+/* screen — full visible content, scrollable */
 .phone-screen {
-  border-radius: 20px;
+  border-radius: 22px;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 280px;
+  height: 290px;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
   scrollbar-width: none;
