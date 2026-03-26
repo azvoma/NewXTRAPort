@@ -8,108 +8,247 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+
 <style>
-.cs-meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2rem 0}
-.cs-meta-cell{background:var(--white);padding:1.1rem 1.25rem}
-.cs-meta-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.4rem}
-.cs-meta-item{font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.15rem}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
-.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
-.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
-.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
-.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
-.learnings{display:grid;gap:.65rem;margin:1rem 0}
-.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
-.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
-.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
-.learn-text strong{font-weight:700;color:var(--text)}
-.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
-.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
-.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
-.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
-.cs-sprint{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.1rem 0}
-.cs-ss{flex:1;background:var(--white);padding:.85rem .5rem;text-align:center}
-.cs-ss-n{font-size:.65rem;color:var(--blue);display:block;margin-bottom:.2rem;font-weight:700}
-.cs-ss-t{font-size:.72rem;font-weight:600;color:var(--text)}
+.cs-editorial{max-width:860px;margin:0 auto;padding:0 var(--px,1.5rem)}
+.cs-overview{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2.5rem 0}
+.cs-ov-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-ov-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.35rem}
+.cs-ov-val{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
+.ed-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.35rem;display:block}
+.ed-h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text);margin-bottom:1.1rem}
+.ed-p{font-size:.95rem;color:var(--text-2);line-height:1.82;margin-bottom:.9rem}
+.ed-p strong{font-weight:700;color:var(--text)}
+.ed-quote{border-left:3px solid var(--blue);margin:1.75rem 0;padding:.85rem 1.25rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+.ed-quote p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.65;margin-bottom:.3rem}
+.ed-quote cite{font-size:.78rem;color:var(--text-3);font-style:normal}
+.ed-divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.img-full{margin:1.75rem 0;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)}
+.img-full img{width:100%;display:block}
+.img-research{width:100%;margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+.img-research img{width:100%;display:block}
+.img-research-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0}
+.img-research-2 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.img-narrow{width:70%;margin:1.75rem auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);display:block}
+.img-narrow img{width:100%;display:block}
+.img-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.75rem 0}
+.img-3 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin:1.5rem 0}
+.insight-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem}
+.insight-num{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.35rem}
+.insight-text{font-size:.82rem;color:var(--text-2);line-height:1.55}
+.feat-list{display:grid;gap:.6rem;margin:1.25rem 0}
+.feat-row{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.feat-row:last-child{border-bottom:none}
+.feat-row-num{font-size:.7rem;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.feat-row-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.feat-row-desc{font-size:.82rem;color:var(--text-3);line-height:1.5}
+.phone-showcase{display:flex;gap:1rem;margin:2rem 0;align-items:flex-start;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.5rem}
+.phone-showcase::-webkit-scrollbar{height:4px}
+.phone-showcase::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:2px}
+.phone-device{flex:0 0 148px;display:flex;flex-direction:column;align-items:center}
+.phone-shell{background:#111;border-radius:28px;padding:5px;box-shadow:0 0 0 1px #1a1a1a,0 6px 20px rgba(0,0,0,.25);width:100%;position:relative}
+.phone-shell::before{display:none}
+.phone-screen{border-radius:24px;overflow-y:scroll;overflow-x:hidden;height:290px;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;background:#fff}
+.phone-screen::-webkit-scrollbar{display:none}
+.phone-screen img{width:100%;display:block}
+.phone-caption{font-size:.7rem;color:var(--text-2);text-align:center;margin-top:.6rem;line-height:1.4;font-weight:600}
+.scroll-hint{display:flex;align-items:center;justify-content:center;gap:.3rem;font-size:.63rem;color:var(--text-4);margin-top:.2rem}
+.scroll-hint svg{width:10px;height:10px;stroke:var(--text-4);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.outcomes-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:1.75rem 0}
+.outcome-cell{background:var(--white);padding:1.5rem 1rem;text-align:center}
+.outcome-val{font-size:2rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.3rem}
+.outcome-label{font-size:.72rem;color:var(--text-3);line-height:1.4}
+.ed-test{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;margin:1.75rem 0}
+.ed-test p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.75;margin-bottom:.85rem}
+.ed-test-name{font-size:.9rem;font-weight:700;color:var(--text)}
+.ed-test-role{font-size:.78rem;color:var(--text-3)}
+.ed-next{display:block;border-top:2px solid var(--border);padding:2rem 0 0;margin-top:3rem}
+.ed-next-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);margin-bottom:.4rem;display:block}
+.ed-next-title{font-size:1.25rem;font-weight:800;color:var(--blue);letter-spacing:-.01em}
+.ed-next:hover .ed-next-title{text-decoration:underline}
+.cs-ul{padding-left:1.2rem;margin:.75rem 0 1rem}
+.cs-ul li{font-size:.92rem;color:var(--text-2);margin-bottom:.35rem;line-height:1.65}
+.sprint-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.sprint-step{background:var(--white);padding:.9rem .6rem;text-align:center}
+.sprint-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.sprint-label{font-size:.75rem;font-weight:600;color:var(--text)}
+.day-block{margin:1.5rem 0;padding:1.5rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.day-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;display:block}
+.day-title{font-size:1rem;font-weight:800;color:var(--text);margin-bottom:.6rem}
+.day-goal{font-size:.82rem;color:var(--text-3);font-style:italic;margin-bottom:.75rem;border-left:2px solid var(--blue-border);padding-left:.75rem}
+.kl-list{display:grid;gap:.75rem;margin:1rem 0}
+.kl-item{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.kl-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
+.kl-text{font-size:.9rem;color:var(--text-2);line-height:1.65}
+.kl-text strong{font-weight:700;color:var(--text)}
 @media(max-width:700px){
-  .cs-meta-strip{grid-template-columns:1fr 1fr}
-  .features-grid{grid-template-columns:1fr 1fr}
-  .dp-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-overview{grid-template-columns:1fr 1fr}
+  .insight-grid{grid-template-columns:1fr 1fr}
+  .img-narrow{width:100%}
+  .img-research-2{grid-template-columns:1fr}
+  .phone-device{flex:0 0 120px}
+  .phone-screen{height:220px}
+  .outcomes-row{grid-template-columns:1fr 1fr}
+  .img-3{grid-template-columns:1fr 1fr}
+  .sprint-bar{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <div id="nav-slot"></div>
-<div class="cs-detail">
+<div class="cs-editorial">
   <a class="cs-back" href="index.html">← Back to Case Studies</a>
-  <div class="cs-hero">
-    <span class="cs-tag">Case Study · 3 Months · UI/UX Designer</span>
+
+  <div style="padding:2.5rem 0 0">
+    <div class="cs-pills" style="margin-bottom:1rem">
+      <span class="cs-pill">3 Months</span><span class="cs-pill">Client Project</span>
+      <span class="cs-pill blue">UI/UX Designer</span>
+      <span class="cs-pill green">100% Task Completion</span><span class="cs-pill green">WCAG 2.2 AA</span>
+    </div>
     <h1 class="cs-page-title">SurgeryPrep</h1>
-    <p class="cs-lead">Personalised Surgical Guidance to Reduce Patient Anxiety and Clinical Overload. A personalised mobile companion designed to guide patients through their surgical journey with clear, timely, and emotionally supportive information.</p>
-    <div class="cs-pills"><span class="cs-pill green">3 Months</span><span class="cs-pill">Client Project</span><span class="cs-pill blue">WCAG 2.2 AA</span><span class="cs-pill">Healthcare</span></div>
-    <div class="cs-stats">
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">3 Months</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UI/UX Designer</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Miro · UXPilot</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Team</div><div class="cs-stat-val">5 members (healthcare)</div></div>
-    </div>
+    <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">Personalised surgical guidance to reduce patient anxiety and clinical overload — a mobile companion that guides patients through their surgical journey with clear, timely, and emotionally supportive information.</p>
   </div>
-  <div class="cs-hero-img"><img src="../assets/images/surgeryprep_hero.png" alt="SurgeryPrep mobile app screens" loading="lazy"></div>
 
-  <div class="cs-meta-strip"><div class="cs-meta-cell"><div class="cs-meta-label">My Role</div><div class="cs-meta-item">UI/UX Designer</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Collaboration</div><div class="cs-meta-item">Healthcare Professionals</div><div class="cs-meta-item">Patient Advisors</div><div class="cs-meta-item">Clinical Stakeholders</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Tools Used</div><div class="cs-meta-item">Figma · Miro · UXPilot</div><div class="cs-meta-item">Design System Tools</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Status</div><div class="cs-meta-item">Design concept validated through user testing with patients and healthcare providers.</div></div></div>
+  <div class="cs-overview">
+    <div class="cs-ov-cell"><div class="cs-ov-label">Timeline</div><div class="cs-ov-val">3 Months</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Role</div><div class="cs-ov-val">UI/UX Designer</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Tools</div><div class="cs-ov-val">Figma · Miro · UXPilot · Design System Tools</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Collaboration</div><div class="cs-ov-val">Healthcare Professionals · Patient Advisors · Clinical Stakeholders</div></div>
+  </div>
 
-  <div class="cs-layout"><div class="cs-main">
+  <div class="img-full"><img src="../assets/images/surgeryprep_hero.png" alt="SurgeryPrep — personalised mobile companion for surgical patients"></div>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">The Challenge</h2>
-      <div class="cs-quote"><p>I felt completely lost after my surgery consultation. The leaflet they gave me was confusing, and I couldn't remember half of what the doctor said. I ended up calling the hospital three times just to ask basic questions.</p><cite>— Sarah, knee surgery patient</cite></div>
-      <ul class="cs-ul">
-        <li>Patients forget 40–80% of medical information immediately after consultations</li>
-        <li>Printed instructions are easily misplaced or misunderstood</li>
-        <li>Anxiety peaks before surgery due to unclear preparation steps</li>
-        <li>Healthcare staff spend significant time answering repetitive patient questions</li>
-      </ul>
-    </div>
+  <hr class="ed-divider">
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Research</h2>
-      <p class="cs-p">Conducted patient interviews with 8 participants across orthopedic, cardiac, and general surgeries; interviewed 5 clinicians. Led journey mapping from diagnosis to recovery and identified critical communication gaps.</p>
-      <h3 class="cs-h3">Research Synthesis</h3>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/patient_interview_report.CPMFK0Kj.png" alt="Patient interview report" loading="lazy"><img src="https://az-astro.netlify.app/_astro/healthcare_professional_interview_report.DIOf21jt.png" alt="Healthcare professional interview report" loading="lazy"></div>
-      <h3 class="cs-h3">User Personas</h3>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/primary_patient_persona.DcOeM3y7.png" alt="Primary patient persona" loading="lazy"><img src="https://az-astro.netlify.app/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Healthcare provider persona" loading="lazy"></div>
-    </div>
+  <span class="ed-label">The Problem</span>
+  <h2 class="ed-h2">When patients are most anxious, they are most poorly served</h2>
+  <p class="ed-p">Patients undergoing surgery often face a stressful, information-heavy experience. Traditional communication methods — leaflets, verbal consultations — frequently fail to support patients when they actually need guidance.</p>
+  <div class="ed-quote"><p>I felt completely lost after my surgery consultation. The leaflet they gave me was confusing, and I couldn't remember half of what the doctor said. I ended up calling the hospital three times just to ask basic questions.</p><cite>— Sarah, knee surgery patient</cite></div>
+  <ul class="cs-ul">
+    <li>Patients forget 40–80% of medical information immediately after consultations</li>
+    <li>Printed instructions are easily misplaced or misunderstood</li>
+    <li>Anxiety peaks before surgery due to unclear preparation steps</li>
+    <li>Healthcare staff spend significant time answering repetitive patient questions</li>
+  </ul>
+  <p class="ed-p">This breakdown in communication leads to increased patient stress, reduced adherence to instructions, and avoidable strain on already limited clinical resources.</p>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Ideation &amp; Architecture</h2>
-      <p class="cs-p">Explored over 20 concepts through Crazy 8s. Live chat and real-time clinician messaging were excluded due to clinical risk and regulatory complexity. Focus remained on clarity, safety, and feasibility.</p>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s ideation sketches" loading="lazy"></div>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/information_architecture.DHE4HRoO.png" alt="Information architecture diagram" loading="lazy"></div>
-    </div>
+  <hr class="ed-divider">
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Design &amp; Final Screens</h2>
-      <p class="cs-p">Low-fidelity wireframes established core flows, then iterative testing refined hierarchy and clarity. A calm, reassuring aesthetic was maintained throughout while upholding medical credibility.</p>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/1.CJa0_t0W.png" alt="Low-fidelity wireframes" loading="lazy"></div>
-      <h3 class="cs-h3">High-Fidelity Mobile Screens</h3>
-      <div class="phone-strip"><div><div class="phone-frame"><img src="../assets/images/surgery_mobile_screens.png" alt="Complete app experience"></div><p class="phone-label">Complete app experience</p></div></div>
-      <div class="cs-img-4"><img src="https://az-astro.netlify.app/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DWofB18-.png" alt="Onboarding" loading="lazy"><img src="https://az-astro.netlify.app/_astro/2.BXoRSYmI.png" alt="Sign in" loading="lazy"><img src="https://az-astro.netlify.app/_astro/3.B-2ANGad.png" alt="Create account" loading="lazy"><img src="https://az-astro.netlify.app/_astro/4.BW4uVsRX.png" alt="My Surgical Journey" loading="lazy"></div>
-      <div class="cs-img-4"><img src="https://az-astro.netlify.app/_astro/5.gT3ZbKTb.png" alt="Educational Resources" loading="lazy"><img src="https://az-astro.netlify.app/_astro/7.DzcOZ9nY.png" alt="Recovery Tasks" loading="lazy"><img src="https://az-astro.netlify.app/_astro/8.C7zZ91E5.png" alt="Care Team Messages" loading="lazy"><img src="https://az-astro.netlify.app/_astro/9.A2NjYbqc.png" alt="Recovery Goals" loading="lazy"></div>
-    </div>
+  <span class="ed-label">Solution Vision</span>
+  <h2 class="ed-h2">A personalised, timeline-based mobile companion</h2>
+  <p class="ed-p">SurgeryPrep was designed to adapt to each patient's surgery type and recovery stage — delivering information progressively, supporting emotional reassurance, and providing actionable guidance exactly when patients need it. The four design goals: reduce cognitive overload, increase patient confidence, improve adherence to instructions, reduce repetitive patient–clinician communication.</p>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Outcomes</h2>
-      <div class="cs-outcomes">
-        <div class="cs-outcome"><div class="cs-outcome-val">100%</div><div class="cs-outcome-label">Task completion in testing</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">AA</div><div class="cs-outcome-label">WCAG 2.2 AA compliant</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">↓</div><div class="cs-outcome-label">Reduced anxiety calls to nursing staff</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">✓</div><div class="cs-outcome-label">Validated by patients &amp; clinicians</div></div>
-      </div>
-      <div class="cs-test"><p>"Andrew's empathetic approach to design was exactly what this project needed. He navigated the complex stakeholder landscape with remarkable skill, ensuring clinical accuracy while keeping the patient experience at the forefront."</p><div class="cs-test-name">Dr. Emma Wilson</div><div class="cs-test-role">Director of Patient Experience, Regional Hospital Network</div></div>
-    </div>
+  <hr class="ed-divider">
 
-    <a class="cs-next" href="bluvape.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">Blu Vape Brand Reimagination — 5-day Google Design Sprint →</div></a>
-  </div></div>
+  <span class="ed-label">Research</span>
+  <h2 class="ed-h2">Understanding the human experience</h2>
+  <p class="ed-p">I conducted patient interviews with 8 participants across orthopedic, cardiac, and general surgeries, and interviewed 5 clinicians (3 surgeons, 2 nurses). Qualitative research was intentionally prioritised to uncover emotional stressors — fear, uncertainty, information overload — that are invisible in clinical documentation. I coordinated stakeholder alignment between clinical staff and hospital administration throughout.</p>
+  <div class="ed-quote"><p>We answer the same five questions about post-surgery care at least 20 times a day. If patients had access to this information when they needed it, we could focus on more complex cases.</p><cite>— Dr. Martinez, Orthopedic Surgeon</cite></div>
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/patient_interview_report.CPMFK0Kj.png" alt="Patient interview report">
+    <img src="https://az-astro.netlify.app/_astro/healthcare_professional_interview_report.DIOf21jt.png" alt="Healthcare professional interview report">
+  </div>
+  <div class="insight-grid"><div class="insight-card"><div class="insight-num">01</div><div class="insight-text">Anxiety peaks <strong>24–48 hours before surgery</strong> due to uncertainty about preparation steps</div></div><div class="insight-card"><div class="insight-num">02</div><div class="insight-text">Post-surgery instructions are <strong>poorly retained</strong>, leading to repeated calls to clinicians</div></div><div class="insight-card"><div class="insight-num">03</div><div class="insight-text"><strong>Personalised, time-based information</strong> significantly improves patient confidence and compliance</div></div></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Insights</span>
+  <h2 class="ed-h2">Defining the design challenge</h2>
+  <p class="ed-p"><strong>Problem Statement:</strong> How might we transform complex medical instructions into clear, timely, and emotionally supportive guidance that helps patients feel confident throughout their surgical journey — while reducing unnecessary communication burden on healthcare staff?</p>
+  <p class="ed-p">Two primary personas were created — the patient (cognitively anxious, motivated to "do everything right", easily overloaded by dense medical language) and the healthcare provider (time-constrained, frustrated by repeated questions, concerned with safety and compliance). Because patients were often cognitively overloaded, advanced customisation was deprioritised in favour of guided defaults, progressive disclosure, and reassurance-driven design.</p>
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/primary_patient_persona.DcOeM3y7.png" alt="Primary patient persona">
+    <img src="https://az-astro.netlify.app/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Healthcare provider persona">
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Ideation</span>
+  <h2 class="ed-h2">From problems to solutions</h2>
+  <p class="ed-p">Over 20 concepts were explored through Crazy 8s and brainstorming sessions, evaluated against a value vs. effort matrix. Features such as live chat and real-time clinician messaging were intentionally excluded due to clinical risk, scalability concerns, and regulatory complexity. Focus remained on clarity, safety, and feasibility.</p>
+  <div class="img-research"><img src="https://az-astro.netlify.app/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s ideation sketches"></div>
+  <div class="feat-list">
+    <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Personalised Surgery Timeline</div><div class="feat-row-desc">Dynamic guidance tailored to surgery type and recovery stage — the right information at the right moment</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">2</div><div><div class="feat-row-title">Interactive Checklists</div><div class="feat-row-desc">Real-time task completion to reduce uncertainty and give patients a sense of control</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">3</div><div><div class="feat-row-title">Smart FAQ System</div><div class="feat-row-desc">Contextual answers surfaced based on where users are in their journey — not a static help page</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">4</div><div><div class="feat-row-title">Recovery Tracking</div><div class="feat-row-desc">Symptom logging with gentle alerts for concerning trends — supporting clinician oversight without alarm</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">5</div><div><div class="feat-row-title">Gentle Reminders</div><div class="feat-row-desc">Non-overwhelming notifications designed to support, not stress — timed to when patients need them most</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">6</div><div><div class="feat-row-title">Educational Content</div><div class="feat-row-desc">Bite-sized, plain-language medical information delivered progressively throughout the journey</div></div></div>
+  </div>
+  <p class="ed-p">A clear and intuitive information architecture was created to ensure users always knew where they were, what to do next, and what mattered most right now.</p>
+  <div class="img-narrow"><img src="https://az-astro.netlify.app/_astro/information_architecture.DHE4HRoO.png" alt="Information architecture diagram"></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Design &amp; Validation</span>
+  <h2 class="ed-h2">Low-fidelity to high-fidelity</h2>
+  <p class="ed-p">Low-fidelity wireframes established core flows, then iterative testing refined hierarchy and clarity. The design system prioritised a calm, reassuring aesthetic while maintaining medical credibility — every colour, typography choice, and interaction was designed to reduce anxiety based on psychological design principles.</p>
+  <div class="img-research"><img src="https://az-astro.netlify.app/_astro/1.CJa0_t0W.png" alt="Low fidelity wireframes"></div>
+  <p class="ed-p" style="margin-top:1.25rem">Final high-fidelity screens across the complete surgical journey — scroll inside each screen to explore:</p>
+  <div class="phone-showcase">
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DWofB18-.png" alt="Onboarding"></div></div>
+  <p class="phone-caption">Onboarding</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/2.BXoRSYmI.png" alt="Sign in"></div></div>
+  <p class="phone-caption">Sign in</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/3.B-2ANGad.png" alt="Create account"></div></div>
+  <p class="phone-caption">Create account</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/4.BW4uVsRX.png" alt="Surgical journey"></div></div>
+  <p class="phone-caption">Surgical journey</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/5.gT3ZbKTb.png" alt="Educational resources"></div></div>
+  <p class="phone-caption">Educational resources</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+  </div>
+  <div class="phone-showcase" style="margin-top:.5rem">
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/7.DzcOZ9nY.png" alt="Recovery tasks"></div></div>
+  <p class="phone-caption">Recovery tasks</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/8.C7zZ91E5.png" alt="Care team messages"></div></div>
+  <p class="phone-caption">Care team messages</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+    <div class="phone-device">
+  <div class="phone-shell"><div class="phone-screen"><img src="https://az-astro.netlify.app/_astro/9.A2NjYbqc.png" alt="Recovery goals"></div></div>
+  <p class="phone-caption">Recovery goals</p>
+  <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll</div>
+</div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Results</span>
+  <h2 class="ed-h2">Validated impact, measurable outcomes</h2>
+  <p class="ed-p">5 usability testing sessions (3 patients, 2 clinicians). Task-based scenarios across key flows.</p>
+  <div class="outcomes-row"><div class="outcome-cell"><div class="outcome-val">100%</div><div class="outcome-label">Task completion rate in usability testing</div></div><div class="outcome-cell"><div class="outcome-val">AA</div><div class="outcome-label">WCAG 2.2 AA compliant throughout</div></div><div class="outcome-cell"><div class="outcome-val">↓</div><div class="outcome-label">Reduced anxiety calls to nursing staff</div></div><div class="outcome-cell"><div class="outcome-val">✓</div><div class="outcome-label">Validated by patients and clinicians</div></div></div>
+  <p class="ed-p">Users described the experience as "reassuring" and "much clearer than leaflets." Clinicians identified strong potential for reduced call volume. Navigation required little to no explanation.</p>
+  <div class="ed-test"><p>"Andrew's empathetic approach to design was exactly what this project needed. He navigated the complex stakeholder landscape — from surgeons to administrators — with remarkable skill, ensuring clinical accuracy while keeping the patient experience at the forefront. The app has dramatically reduced pre-surgery anxiety calls to our nursing staff, and patient feedback has been overwhelmingly positive."</p><div class="ed-test-name">Dr. Emma Wilson</div><div class="ed-test-role">Director of Patient Experience, Regional Hospital Network</div></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Takeaways</span>
+  <h2 class="ed-h2">What I learned</h2>
+  <div class="kl-list"><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Timing is everything.</strong> Context-aware delivery of information reduces anxiety far more effectively than volume or comprehensiveness.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Language matters.</strong> Empathetic, plain-language wording builds trust in healthcare contexts — dense clinical language does the opposite.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Personalisation scales impact.</strong> Relevant information delivered at the right moment increases adherence without adding complexity.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Simplicity is a clinical decision.</strong> Excluding live chat wasn't a compromise — it was the right design choice to keep the product safe, scalable, and focused.</div></div></div>
+  <div class="ed-quote"><p>For the first time, I felt like I knew what was happening to my body.</p><cite>— Patient participant, usability testing</cite></div>
+
+  <a class="ed-next" href="bluvape.html"><span class="ed-next-lbl">Next project</span><div class="ed-next-title">Blu Vape Brand Reimagination — 5-day Google Design Sprint →</div></a>
+  <div style="height:4rem"></div>
 </div>
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>

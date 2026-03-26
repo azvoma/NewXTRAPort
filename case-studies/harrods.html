@@ -118,25 +118,18 @@
 .phone-shell {
   background: #111;
   border-radius: 28px;
-  padding: 6px 5px;
+  padding: 5px;
   box-shadow: 0 0 0 1px #1a1a1a, 0 6px 20px rgba(0,0,0,.25);
   width: 100%;
   position: relative;
 }
 
-/* slim notch pill */
-.phone-shell::before {
-  content: '';
-  display: block;
-  width: 40px; height: 10px;
-  background: #111;
-  border-radius: 0 0 8px 8px;
-  margin: 0 auto 3px;
-}
+/* remove notch — not needed, adds bulk */
+.phone-shell::before { display: none; }
 
 /* screen — full visible content, scrollable */
 .phone-screen {
-  border-radius: 22px;
+  border-radius: 24px;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 290px;

@@ -8,97 +8,204 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+
 <style>
-.cs-meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2rem 0}
-.cs-meta-cell{background:var(--white);padding:1.1rem 1.25rem}
-.cs-meta-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.4rem}
-.cs-meta-item{font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.15rem}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
-.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
-.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
-.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
-.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
-.learnings{display:grid;gap:.65rem;margin:1rem 0}
-.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
-.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
-.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
-.learn-text strong{font-weight:700;color:var(--text)}
-.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
-.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
-.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
-.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
-.cs-sprint{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.1rem 0}
-.cs-ss{flex:1;background:var(--white);padding:.85rem .5rem;text-align:center}
-.cs-ss-n{font-size:.65rem;color:var(--blue);display:block;margin-bottom:.2rem;font-weight:700}
-.cs-ss-t{font-size:.72rem;font-weight:600;color:var(--text)}
+.cs-editorial{max-width:860px;margin:0 auto;padding:0 var(--px,1.5rem)}
+.cs-overview{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2.5rem 0}
+.cs-ov-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-ov-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.35rem}
+.cs-ov-val{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
+.ed-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.35rem;display:block}
+.ed-h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text);margin-bottom:1.1rem}
+.ed-p{font-size:.95rem;color:var(--text-2);line-height:1.82;margin-bottom:.9rem}
+.ed-p strong{font-weight:700;color:var(--text)}
+.ed-quote{border-left:3px solid var(--blue);margin:1.75rem 0;padding:.85rem 1.25rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+.ed-quote p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.65;margin-bottom:.3rem}
+.ed-quote cite{font-size:.78rem;color:var(--text-3);font-style:normal}
+.ed-divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.img-full{margin:1.75rem 0;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)}
+.img-full img{width:100%;display:block}
+.img-research{width:100%;margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+.img-research img{width:100%;display:block}
+.img-research-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0}
+.img-research-2 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.img-narrow{width:70%;margin:1.75rem auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);display:block}
+.img-narrow img{width:100%;display:block}
+.img-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.75rem 0}
+.img-3 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin:1.5rem 0}
+.insight-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem}
+.insight-num{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.35rem}
+.insight-text{font-size:.82rem;color:var(--text-2);line-height:1.55}
+.feat-list{display:grid;gap:.6rem;margin:1.25rem 0}
+.feat-row{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.feat-row:last-child{border-bottom:none}
+.feat-row-num{font-size:.7rem;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.feat-row-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.feat-row-desc{font-size:.82rem;color:var(--text-3);line-height:1.5}
+.phone-showcase{display:flex;gap:1rem;margin:2rem 0;align-items:flex-start;justify-content:center;flex-wrap:nowrap;overflow-x:auto;padding-bottom:.5rem}
+.phone-showcase::-webkit-scrollbar{height:4px}
+.phone-showcase::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:2px}
+.phone-device{flex:0 0 148px;display:flex;flex-direction:column;align-items:center}
+.phone-shell{background:#111;border-radius:28px;padding:5px;box-shadow:0 0 0 1px #1a1a1a,0 6px 20px rgba(0,0,0,.25);width:100%;position:relative}
+.phone-shell::before{display:none}
+.phone-screen{border-radius:24px;overflow-y:scroll;overflow-x:hidden;height:290px;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;scrollbar-width:none;background:#fff}
+.phone-screen::-webkit-scrollbar{display:none}
+.phone-screen img{width:100%;display:block}
+.phone-caption{font-size:.7rem;color:var(--text-2);text-align:center;margin-top:.6rem;line-height:1.4;font-weight:600}
+.scroll-hint{display:flex;align-items:center;justify-content:center;gap:.3rem;font-size:.63rem;color:var(--text-4);margin-top:.2rem}
+.scroll-hint svg{width:10px;height:10px;stroke:var(--text-4);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.outcomes-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:1.75rem 0}
+.outcome-cell{background:var(--white);padding:1.5rem 1rem;text-align:center}
+.outcome-val{font-size:2rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.3rem}
+.outcome-label{font-size:.72rem;color:var(--text-3);line-height:1.4}
+.ed-test{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;margin:1.75rem 0}
+.ed-test p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.75;margin-bottom:.85rem}
+.ed-test-name{font-size:.9rem;font-weight:700;color:var(--text)}
+.ed-test-role{font-size:.78rem;color:var(--text-3)}
+.ed-next{display:block;border-top:2px solid var(--border);padding:2rem 0 0;margin-top:3rem}
+.ed-next-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);margin-bottom:.4rem;display:block}
+.ed-next-title{font-size:1.25rem;font-weight:800;color:var(--blue);letter-spacing:-.01em}
+.ed-next:hover .ed-next-title{text-decoration:underline}
+.cs-ul{padding-left:1.2rem;margin:.75rem 0 1rem}
+.cs-ul li{font-size:.92rem;color:var(--text-2);margin-bottom:.35rem;line-height:1.65}
+.sprint-bar{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.5rem 0}
+.sprint-step{background:var(--white);padding:.9rem .6rem;text-align:center}
+.sprint-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.sprint-label{font-size:.75rem;font-weight:600;color:var(--text)}
+.day-block{margin:1.5rem 0;padding:1.5rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.day-tag{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;display:block}
+.day-title{font-size:1rem;font-weight:800;color:var(--text);margin-bottom:.6rem}
+.day-goal{font-size:.82rem;color:var(--text-3);font-style:italic;margin-bottom:.75rem;border-left:2px solid var(--blue-border);padding-left:.75rem}
+.kl-list{display:grid;gap:.75rem;margin:1rem 0}
+.kl-item{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.kl-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
+.kl-text{font-size:.9rem;color:var(--text-2);line-height:1.65}
+.kl-text strong{font-weight:700;color:var(--text)}
 @media(max-width:700px){
-  .cs-meta-strip{grid-template-columns:1fr 1fr}
-  .features-grid{grid-template-columns:1fr 1fr}
-  .dp-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-overview{grid-template-columns:1fr 1fr}
+  .insight-grid{grid-template-columns:1fr 1fr}
+  .img-narrow{width:100%}
+  .img-research-2{grid-template-columns:1fr}
+  .phone-device{flex:0 0 120px}
+  .phone-screen{height:220px}
+  .outcomes-row{grid-template-columns:1fr 1fr}
+  .img-3{grid-template-columns:1fr 1fr}
+  .sprint-bar{grid-template-columns:repeat(3,1fr)}
 }
 </style>
 </head>
 <body>
 <div id="nav-slot"></div>
-<div class="cs-detail">
+<div class="cs-editorial">
   <a class="cs-back" href="index.html">← Back to Case Studies</a>
-  <div class="cs-hero">
-    <span class="cs-tag">Case Study · 3 Months · UI/UX Designer</span>
+
+  <div style="padding:2.5rem 0 0">
+    <div class="cs-pills" style="margin-bottom:1rem">
+      <span class="cs-pill">3 Months</span><span class="cs-pill">Client Project</span>
+      <span class="cs-pill blue">UX &amp; UI Designer</span>
+      <span class="cs-pill green">WCAG 2.2 AA</span><span class="cs-pill">B2B Strategy</span>
+    </div>
     <h1 class="cs-page-title">Samsung B2B Lead Generation Page</h1>
-    <p class="cs-lead">Repositioning Samsung From Vendor to Strategic Partner. Transformed Samsung's B2B digital presence to resonate with senior decision-makers in Construction and the Private Rental Sector — moving from product showcase to consultative partnership platform.</p>
-    <div class="cs-pills"><span class="cs-pill green">3 Months</span><span class="cs-pill">Client Project</span><span class="cs-pill blue">WCAG 2.2 AA</span><span class="cs-pill">B2B Strategy</span></div>
-    <div class="cs-stats">
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">3 Months</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UX &amp; UI Designer</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Team</div><div class="cs-stat-val">6 cross-functional</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Adobe XD · Miro</div></div>
-    </div>
+    <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">Repositioning Samsung from vendor to strategic partner — transforming their B2B digital presence for Construction and Private Rental Sector decision-makers.</p>
   </div>
-  <div class="cs-hero-img"><img src="../assets/images/samsung_hero.png" alt="Samsung B2B — Tomorrow's Homes, Today — multi-device responsive design" loading="lazy"></div>
 
-  <div class="cs-meta-strip"><div class="cs-meta-cell"><div class="cs-meta-label">My Role</div><div class="cs-meta-item">UX &amp; UI Designer</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Collaboration</div><div class="cs-meta-item">Samsung Marketing Team</div><div class="cs-meta-item">Business Stakeholders</div><div class="cs-meta-item">B2B Strategy Team</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Tools Used</div><div class="cs-meta-item">Figma · Adobe XD · Miro</div><div class="cs-meta-item">Notion · HTML/CSS · JavaScript</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Status</div><div class="cs-meta-item">Design validated through stakeholder feedback and industry research.</div></div></div>
+  <div class="cs-overview">
+    <div class="cs-ov-cell"><div class="cs-ov-label">Timeline</div><div class="cs-ov-val">3 Months</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Role</div><div class="cs-ov-val">UX &amp; UI Designer</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Tools</div><div class="cs-ov-val">Figma · Adobe XD · Miro · Notion · HTML/CSS/JS</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Team</div><div class="cs-ov-val">Samsung Marketing · Business Stakeholders · B2B Strategy Team</div></div>
+  </div>
 
-  <div class="cs-layout"><div class="cs-main">
+  <div class="img-full"><img src="../assets/images/samsung_hero.png" alt="Samsung B2B — Tomorrow's Homes, Today — multi-device responsive design"></div>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">The Challenge</h2>
-      <div class="cs-quote"><p>Samsung's current B2B presence doesn't speak to our specific needs in construction and PRS. We need partners who understand our industry challenges — not just suppliers pushing products.</p><cite>— David Chen, Construction Project Manager</cite></div>
-      <ul class="cs-ul">
-        <li>Generic, product-led messaging failed to resonate with senior B2B decision-makers</li>
-        <li>Lack of industry-specific value propositions reduced trust and engagement</li>
-        <li>Lead forms felt transactional and sales-driven</li>
-        <li>Partnership stories and collaborative strengths were underrepresented</li>
-      </ul>
-    </div>
+  <hr class="ed-divider">
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Research</h2>
-      <p class="cs-p">Facilitated cross-department workshops with Samsung's B2B marketing, sales, and technical teams. Conducted stakeholder interviews, target audience analysis, competitive analysis, and content strategy review.</p>
-      <h3 class="cs-h3">Research Synthesis</h3>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/competitive_analysis%20copy.DtIbKoEo.png" alt="Competitive analysis" loading="lazy"><img src="https://az-astro.netlify.app/_astro/rpbcrwwexiyucwyk.CCDwc9Tn.png" alt="Content strategy breakdown" loading="lazy"></div>
-      <h3 class="cs-h3">User Flow Design</h3>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/w4kmuc7ixp4mr6fm.fWp1yXzO.jpg" alt="B2B decision-maker persona — John Miller" loading="lazy"></div>
-    </div>
+  <span class="ed-label">The Problem</span>
+  <h2 class="ed-h2">A missed opportunity to lead, not just sell</h2>
+  <p class="ed-p">Samsung's existing B2B digital presence struggled to resonate with senior decision-makers in the Construction and Private Rental Sector. The experience focused heavily on product features, positioning Samsung as a supplier rather than a long-term strategic partner.</p>
+  <div class="ed-quote"><p>Samsung's current B2B presence doesn't speak to our specific needs in construction and PRS. We need partners who understand our industry challenges — not just suppliers pushing products.</p><cite>— David Chen, Construction Project Manager</cite></div>
+  <ul class="cs-ul">
+    <li>Generic, product-led messaging failed to resonate with senior B2B decision-makers</li>
+    <li>Lack of industry-specific value propositions reduced trust and engagement</li>
+    <li>Lead forms felt transactional and sales-driven</li>
+    <li>Partnership stories and collaborative strengths were underrepresented</li>
+    <li>Missed opportunities to capture high-intent B2B leads</li>
+  </ul>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Ideation &amp; Design</h2>
-      <p class="cs-p">Explored multiple narrative and structural page concepts. Rejected aggressive lead-capture forms, feature-heavy product sections, and sales-driven language in favour of clarity, credibility, and restraint.</p>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/cbliimemci6sokvz.CBNatdHa.png" alt="Wireframe sketches" loading="lazy"><img src="https://az-astro.netlify.app/_astro/kaeeuvjspp8byvpn.CUqbp19Z.png" alt="Ideation board" loading="lazy"></div>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/8jpkzotwhq39mvzs%20copy.CpPN2tbe.jpg" alt="Information architecture" loading="lazy"></div>
-      <div class="cs-img-3" style="margin-top:1.25rem">
-        <img src="https://az-astro.netlify.app/_astro/p5vycbgvfsuw7vfw_(1).ryCqD_D-.png" alt="Design iteration 1" loading="lazy">
-        <img src="https://az-astro.netlify.app/_astro/3krvyfojzvpzcrh4_(1).DIobK5Ne.png" alt="Design iteration 2" loading="lazy">
-        <img src="https://az-astro.netlify.app/_astro/bj4xrm7ktqkna6sz_(1).Bs5NSWnd.png" alt="Design iteration 3" loading="lazy">
-      </div>
-    </div>
+  <hr class="ed-divider">
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Client Testimonial</h2>
-      <div class="cs-test"><p>"Andrew transformed how we present ourselves to B2B clients. He facilitated workshops across our marketing, sales, and technical teams, turning conflicting priorities into a unified vision. The new platform positions us as strategic partners, not just vendors."</p><div class="cs-test-name">Michael Chen</div><div class="cs-test-role">B2B Marketing Director, Samsung Electronics</div></div>
-    </div>
+  <span class="ed-label">Solution Vision</span>
+  <h2 class="ed-h2">Consultative, not promotional</h2>
+  <p class="ed-p">Transform Samsung's B2B presence from a product showcase into a consultative partnership platform — one that demonstrates industry expertise, builds trust, and guides users toward meaningful engagement without feeling sales-driven. The four design goals: position Samsung as a strategic partner not a vendor, communicate industry understanding and credibility, improve lead quality over lead quantity, and align UX decisions with Samsung's broader business objectives.</p>
 
-    <a class="cs-next" href="mindnest.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">MindNest — Wellness app redesign that reduced drop-off →</div></a>
-  </div></div>
+  <hr class="ed-divider">
+
+  <span class="ed-label">Research</span>
+  <h2 class="ed-h2">Understanding business alignment</h2>
+  <p class="ed-p">I facilitated cross-department workshops with Samsung's B2B marketing, sales, and technical teams. Research methods included stakeholder interviews, target audience analysis, competitive analysis, content strategy review, and analytics review. I coordinated stakeholder alignment across diverse perspectives to transform the platform from a product catalogue into a consultative partnership tool.</p>
+  <div class="ed-quote"><p>We need Samsung to position themselves as a strategic partner who understands our long-term vision — not just another vendor selling individual products.</p><cite>— Sarah Williams, PRS Development Director</cite></div>
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/competitive_analysis.C16cib4v.png" alt="Competitive analysis of B2B pages">
+    <img src="https://az-astro.netlify.app/_astro/rpbcrwwexiyucwyk.CCDwc9Tn.png" alt="Content strategy breakdown">
+  </div>
+  <div class="insight-grid"><div class="insight-card"><div class="insight-num">01</div><div class="insight-text">Senior stakeholders value <strong>clarity, trust, and partnership credibility</strong> over technical specifications</div></div><div class="insight-card"><div class="insight-num">02</div><div class="insight-text">Industry-specific narratives resonate <strong>more strongly</strong> than generic product messaging</div></div><div class="insight-card"><div class="insight-num">03</div><div class="insight-text">Competitors underutilised real partnership stories — a <strong>clear differentiation opportunity</strong> for Samsung</div></div></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Insights</span>
+  <h2 class="ed-h2">Defining the strategic challenge</h2>
+  <p class="ed-p"><strong>Problem Statement:</strong> How might Samsung reposition its B2B digital presence to clearly communicate partnership value, industry understanding, and long-term collaboration — while still supporting lead generation goals?</p>
+  <p class="ed-p">The primary persona was a mid-to-senior B2B decision-maker — time-poor and outcome-focused, skeptical of sales-led messaging, valuing credibility, proof, and long-term collaboration, and frustrated by generic content and unclear value propositions. Because this audience prioritises trust over exploration, I deprioritised product grids and promotional messaging in favour of scannable narratives, proof points, and consultative calls-to-action.</p>
+  <div class="img-narrow"><img src="https://az-astro.netlify.app/_astro/w4kmuc7ixp4mr6fm.fWp1yXzO.jpg" alt="Primary persona — John Miller, B2B decision-maker"></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Ideation</span>
+  <h2 class="ed-h2">From strategy to structure</h2>
+  <p class="ed-p">Multiple narrative and structural page concepts were explored through wireframing and rapid prototyping. A value vs. effort matrix was used to prioritise concepts aligned with business impact. Three things were deliberately rejected: aggressive lead-capture forms (risked eroding trust), feature-heavy product sections (reinforced vendor perception), and sales-driven language (conflicted with partnership positioning). The final approach focused on <strong>clarity, credibility, and restraint</strong>.</p>
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/cbliimemci6sokvz.CBNatdHa.png" alt="Wireframe sketches exploring page structure">
+    <img src="https://az-astro.netlify.app/_astro/kaeeuvjspp8byvpn.CUqbp19Z.png" alt="Ideation board mapping concepts to trust and business value">
+  </div>
+  <div class="feat-list">
+    <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Partnership Storytelling</div><div class="feat-row-desc">Real-world case studies demonstrating collaboration and shared success — not product specs</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">2</div><div><div class="feat-row-title">Solution Overviews</div><div class="feat-row-desc">Industry-specific value propositions addressing Construction and PRS challenges directly</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">3</div><div><div class="feat-row-title">Trust Indicators</div><div class="feat-row-desc">Client testimonials, certifications, and proof points that build credibility before the ask</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">4</div><div><div class="feat-row-title">Educational Content</div><div class="feat-row-desc">Thought leadership and industry insights to position Samsung as an authority, not a vendor</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">5</div><div><div class="feat-row-title">Strategic CTAs</div><div class="feat-row-desc">Consultation-focused calls-to-action — 'talk to an expert', not 'buy now'</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">6</div><div><div class="feat-row-title">Smart Lead Qualification</div><div class="feat-row-desc">Forms designed to segment prospects by project needs and intent — improving lead quality</div></div></div>
+  </div>
+  <p class="ed-p">A clear, linear information structure was designed to guide users from industry context → partnership value → proof and credibility → meaningful engagement — ensuring intuitive navigation and minimal cognitive load for busy decision-makers.</p>
+  <div class="img-narrow"><img src="https://az-astro.netlify.app/_astro/8jpkzotwhq39mvzs.CpPN2tbe.jpg" alt="Information architecture board"></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Design &amp; Validation</span>
+  <h2 class="ed-h2">Iterating toward consultative partnership</h2>
+  <p class="ed-p">Low-fidelity wireframes tested narrative flow and hierarchy, refined through iterative cycles with stakeholder feedback and user testing insights. High-fidelity designs were built with WCAG 2.2 AA compliance — proper colour contrast, semantic HTML, keyboard navigation support, and screen reader compatibility. Close collaboration with the development team ensured designs were technically feasible across responsive HTML, CSS, and JavaScript frameworks.</p>
+  <div class="img-3">
+    <img src="https://az-astro.netlify.app/_astro/p5vycbgvfsuw7vfw_(1).ryCqD_D-.png" alt="Design iteration 1 — hero and partnership narrative">
+    <img src="https://az-astro.netlify.app/_astro/3krvyfojzvpzcrh4_(1).DIobK5Ne.png" alt="Design iteration 2 — industry solutions and proof points">
+    <img src="https://az-astro.netlify.app/_astro/bj4xrm7ktqkna6sz_(1).Bs5NSWnd.png" alt="Design iteration 3 — consultative CTAs and lead qualification">
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Results</span>
+  <h2 class="ed-h2">Strategic repositioning validated</h2>
+  <div class="outcomes-row"><div class="outcome-cell"><div class="outcome-val">✓</div><div class="outcome-label">Strong stakeholder alignment on partnership messaging</div></div><div class="outcome-cell"><div class="outcome-val">✓</div><div class="outcome-label">Clear differentiation from competitor B2B pages</div></div><div class="outcome-cell"><div class="outcome-val">✓</div><div class="outcome-label">Intuitive navigation, minimal explanation needed</div></div><div class="outcome-cell"><div class="outcome-val">AA</div><div class="outcome-label">WCAG 2.2 AA compliance throughout</div></div></div>
+  <p class="ed-p">Stakeholders confirmed the design better aligned with Samsung's strategic goals, supported higher-quality lead generation, and provided a scalable framework for future B2B initiatives. While not yet deployed live, the project delivered a validated strategic direction with cross-functional buy-in.</p>
+  <div class="ed-test"><p>"Andrew transformed how we present ourselves to B2B clients. He facilitated workshops across our marketing, sales, and technical teams, turning conflicting priorities into a unified vision. The new platform positions us as strategic partners, not just vendors. Our sales team reports that prospects spend significantly more time engaging with our content, and the quality of leads has noticeably improved."</p><div class="ed-test-name">Michael Chen</div><div class="ed-test-role">B2B Marketing Director, Samsung Electronics</div></div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Takeaways</span>
+  <h2 class="ed-h2">What I learned</h2>
+  <div class="kl-list"><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Partnership beats product.</strong> B2B audiences respond to relationship-driven narratives — remove the product grid and replace it with proof of shared success.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Industry specificity matters.</strong> Tailored messaging builds credibility faster than any amount of generic positioning, especially with time-poor decision-makers.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Stakeholder alignment is the design work.</strong> Facilitating cross-functional workshops and translating competing priorities into a unified vision was as important as the visual output.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Restraint is a design decision.</strong> Removing aggressive lead forms and promotional language wasn't a compromise — it was the strategy.</div></div></div>
+
+  <a class="ed-next" href="mindnest.html"><span class="ed-next-lbl">Next project</span><div class="ed-next-title">MindNest — Wellness app redesign that reduced week-one churn →</div></a>
+  <div style="height:4rem"></div>
 </div>
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>
