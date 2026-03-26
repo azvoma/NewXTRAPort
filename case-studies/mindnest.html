@@ -8,6 +8,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.cs-meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2rem 0}
+.cs-meta-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-meta-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.4rem}
+.cs-meta-item{font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.15rem}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
+.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
+.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
+.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
+.learnings{display:grid;gap:.65rem;margin:1rem 0}
+.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
+.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.learn-text strong{font-weight:700;color:var(--text)}
+.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
+.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
+.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
+.cs-sprint{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.1rem 0}
+.cs-ss{flex:1;background:var(--white);padding:.85rem .5rem;text-align:center}
+.cs-ss-n{font-size:.65rem;color:var(--blue);display:block;margin-bottom:.2rem;font-weight:700}
+.cs-ss-t{font-size:.72rem;font-weight:600;color:var(--text)}
+@media(max-width:700px){
+  .cs-meta-strip{grid-template-columns:1fr 1fr}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .dp-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
 </head>
 <body>
 <div id="nav-slot"></div>
@@ -16,41 +45,55 @@
   <div class="cs-hero">
     <span class="cs-tag">Case Study · 8 Weeks · Product Designer</span>
     <h1 class="cs-page-title">MindNest</h1>
-    <p class="cs-lead">35% reduction in week-one churn through improved onboarding. Redesigned the onboarding and habit formation experience for a wellness app, achieving measurable improvements in retention and daily active users.</p>
-    <div class="cs-pills"><span class="cs-pill green">8 Weeks</span><span class="cs-pill ">95% User Approval</span><span class="cs-pill ">Shipped to Production</span></div>
-    <div class="cs-stats"><div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">8 Weeks</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">Product Designer</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Platform</div><div class="cs-stat-val">iOS Mobile App</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Status</div><div class="cs-stat-val">Shipped</div></div></div>
-  </div>
-  <div class="cs-hero-img"><img src="../assets/images/bluvape_hero.png" alt="MindNest — wellness app onboarding and habit formation" loading="lazy"></div>
-  <div class="cs-layout">
-    <div class="cs-main">
-
-      <div class="cs-block">
-        <h2 class="cs-h2">The Problem</h2>
-        <p class="cs-p">52% of users churned within the first 7 days, before experiencing the app's core value proposition. New users felt overwhelmed by options and unclear about how to build a consistent wellness routine.</p>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">Design Process</h2>
-        <div class="steps-wrap">
-          <div class="step-card"><div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Discovery &amp; Insights</span></div><p class="sc-desc">Analysed cohort data to identify churn patterns. Conducted diary studies with 8 users over 2 weeks. Found that users who set reminders had 3× better retention.</p></div>
-          <div class="step-card"><div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Ideation &amp; Exploration</span></div><p class="sc-desc">Explored habit formation frameworks (BJ Fogg, Nir Eyal). Sketched 15 different onboarding approaches. Prioritised a progressive goal-setting model.</p></div>
-          <div class="step-card"><div class="sc-head"><span class="sc-num">03</span><span class="sc-title">Design &amp; Prototype</span></div><p class="sc-desc">Created personalised onboarding based on user goals. Designed a streak system and gentle reminders. Built an iOS prototype with micro-animations.</p></div>
-          <div class="step-card"><div class="sc-head"><span class="sc-num">04</span><span class="sc-title">Testing &amp; Iteration</span></div><p class="sc-desc">Ran beta test with 50 users over 2 weeks. Simplified goal-setting based on confusion feedback and produced a summary iteration report.</p></div>
-        </div>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">Results</h2>
-        <div class="cs-outcomes"><div class="cs-outcome"><div class="cs-outcome-val">-35%</div><div class="cs-outcome-label">Week-one churn</div></div><div class="cs-outcome"><div class="cs-outcome-val">48%→63%</div><div class="cs-outcome-label">Retention rate improved</div></div><div class="cs-outcome"><div class="cs-outcome-val">+22%</div><div class="cs-outcome-label">Daily active users</div></div><div class="cs-outcome"><div class="cs-outcome-val">95%</div><div class="cs-outcome-label">User approval in testing</div></div></div>
-      </div>
-      <a class="cs-next" href="surgeryprep.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">SurgeryPrep — Mobile companion for surgical patient guidance →</div></a>
+    <p class="cs-lead">35% reduction in week-one churn through improved onboarding. Redesigned the onboarding and habit formation experience for a wellness app, achieving a 35% reduction in week-one churn and 22% increase in daily active users.</p>
+    <div class="cs-pills"><span class="cs-pill green">8 Weeks</span><span class="cs-pill green">Product Designer</span><span class="cs-pill">95% User Approval</span><span class="cs-pill">Shipped to Production</span></div>
+    <div class="cs-stats">
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">8 Weeks</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">Product Designer</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Platform</div><div class="cs-stat-val">iOS Mobile App</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Status</div><div class="cs-stat-val blue">Shipped</div></div>
     </div>
-    <aside class="cs-sidebar"><div class="cs-sb-box"><div class="cs-sb-title">Team</div><div class="cs-sb-item">Product Manager</div><div class="cs-sb-item">2 iOS Engineers</div><div class="cs-sb-item">Content Strategist</div></div><div class="cs-sb-box"><div class="cs-sb-title">My Role</div><div class="cs-sb-item">User research &amp; personas</div><div class="cs-sb-item">End-to-end onboarding design</div><div class="cs-sb-item">Habit loop mechanics</div></div><div class="cs-sb-box"><div class="cs-sb-title">Status</div><div class="cs-sb-item">Shipped to production with measurable impact.</div></div></aside>
   </div>
+  <div class="cs-hero-img"><img src="../assets/images/bluvape_hero.png" alt="MindNest wellness app — onboarding and habit formation" loading="lazy"></div>
+
+  <div class="cs-meta-strip"><div class="cs-meta-cell"><div class="cs-meta-label">Team</div><div class="cs-meta-item">Product Designer (Me)</div><div class="cs-meta-item">Product Manager</div><div class="cs-meta-item">2 iOS Engineers</div><div class="cs-meta-item">Content Strategist</div></div><div class="cs-meta-cell"><div class="cs-meta-label">My Role</div><div class="cs-meta-item">User research &amp; personas</div><div class="cs-meta-item">End-to-end onboarding design</div><div class="cs-meta-item">Habit loop mechanics</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Tools Used</div><div class="cs-meta-item">Figma · Sketch · Miro</div><div class="cs-meta-item">Prototyping &amp; User Testing</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Status</div><div class="cs-meta-item">Shipped to production with measurable impact on retention and engagement.</div></div></div>
+
+  <div class="cs-layout"><div class="cs-main">
+
+    <div class="cs-block">
+      <h2 class="cs-h2">The Problem</h2>
+      <p class="cs-p">52% of users churned within the first 7 days, before experiencing the app's core value proposition. New users felt overwhelmed by options and unclear about how to build a consistent wellness routine.</p>
+    </div>
+
+    <div class="cs-block">
+      <h2 class="cs-h2">Design Process</h2>
+      <div class="steps-wrap">
+        <div class="step-card"><div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Discovery &amp; Insights</span></div><p class="sc-desc">Analysed cohort data to identify churn patterns. Conducted diary studies with 8 users over 2 weeks. Found that users who set reminders had 3× better retention.</p></div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Ideation &amp; Exploration</span></div><p class="sc-desc">Explored habit formation frameworks (BJ Fogg, Nir Eyal). Sketched 15 different onboarding approaches. Prioritised a progressive goal-setting model and designed a trigger-routine-reward cycle.</p></div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">03</span><span class="sc-title">Design &amp; Prototype</span></div><p class="sc-desc">Created personalised onboarding based on user goals. Designed a streak system and gentle reminders. Built an iOS prototype with micro-animations covering the complete onboarding and home experience.</p></div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">04</span><span class="sc-title">Testing &amp; Iteration</span></div><p class="sc-desc">Ran beta test with 50 users over 2 weeks. Tracked daily engagement and completion rates. Simplified goal-setting based on confusion feedback and produced a summary iteration report.</p></div>
+      </div>
+    </div>
+
+    <div class="cs-block">
+      <h2 class="cs-h2">Results &amp; Impact</h2>
+      <div class="cs-outcomes">
+        <div class="cs-outcome"><div class="cs-outcome-val">-35%</div><div class="cs-outcome-label">Week-one churn</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">+22%</div><div class="cs-outcome-label">Daily active users</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">63%</div><div class="cs-outcome-label">Retention (up from 48%)</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">95%</div><div class="cs-outcome-label">User approval in testing</div></div>
+      </div>
+    </div>
+
+    <a class="cs-next" href="surgeryprep.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">SurgeryPrep — Mobile companion for surgical patient guidance →</div></a>
+  </div></div>
 </div>
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>
   <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
   <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
-</div><div id="footer-slot"></div>
+</div>
+<div id="footer-slot"></div>
 <script src="../assets/js/shared.js"></script>
 </body>
 </html>

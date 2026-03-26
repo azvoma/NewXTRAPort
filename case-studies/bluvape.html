@@ -8,60 +8,123 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.cs-meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2rem 0}
+.cs-meta-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-meta-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.4rem}
+.cs-meta-item{font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.15rem}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
+.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
+.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
+.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
+.learnings{display:grid;gap:.65rem;margin:1rem 0}
+.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
+.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
+.learn-text strong{font-weight:700;color:var(--text)}
+.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
+.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
+.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
+.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
+.cs-sprint{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.1rem 0}
+.cs-ss{flex:1;background:var(--white);padding:.85rem .5rem;text-align:center}
+.cs-ss-n{font-size:.65rem;color:var(--blue);display:block;margin-bottom:.2rem;font-weight:700}
+.cs-ss-t{font-size:.72rem;font-weight:600;color:var(--text)}
+@media(max-width:700px){
+  .cs-meta-strip{grid-template-columns:1fr 1fr}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .dp-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
 </head>
 <body>
 <div id="nav-slot"></div>
 <div class="cs-detail">
   <a class="cs-back" href="index.html">← Back to Case Studies</a>
   <div class="cs-hero">
-    <span class="cs-tag">Case Study · 5 Days · UX/UI Designer &amp; Sprint Facilitator</span>
+    <span class="cs-tag">Case Study · 5 Days · UI/UX Designer &amp; Sprint Facilitator</span>
     <h1 class="cs-page-title">Blu Vape Brand Reimagination</h1>
-    <p class="cs-lead">A 5-Day Google Design Sprint that moved from ambiguity to a validated product and loyalty direction in one week — achieving 87% user approval in testing.</p>
-    <div class="cs-pills"><span class="cs-pill green">5 Days</span><span class="cs-pill green">87% User Approval</span><span class="cs-pill ">Regulated Industry</span></div>
-    <div class="cs-stats"><div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">5 Days</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UX/UI Designer &amp; Sprint Facilitator</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Miro · Adobe XD</div></div><div class="cs-stat-cell"><div class="cs-stat-lbl">Result</div><div class="cs-stat-val">87% User Approval</div></div></div>
-  </div>
-  <div class="cs-hero-img"><img src="../assets/images/bluvape_hero.png" alt="Blu Vape — high-fidelity mobile screens from the 5-day design sprint" loading="lazy"></div>
-  <div class="cs-layout">
-    <div class="cs-main">
-
-      <div class="cs-block">
-        <h2 class="cs-h2">The Challenge</h2>
-        <div class="cs-quote"><p>We're losing market share to competitors who better understand what customers want. Our brand feels outdated, and the experience is fragmented.</p><cite>— Marketing Director, Blu Vape</cite></div>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">The 5-Day Sprint</h2>
-        <div class="cs-sprint">
-          <div class="cs-ss"><span class="cs-ss-n">1</span><div class="cs-ss-t">Understand</div></div>
-          <div class="cs-ss"><span class="cs-ss-n">2</span><div class="cs-ss-t">Diverge</div></div>
-          <div class="cs-ss"><span class="cs-ss-n">3</span><div class="cs-ss-t">Decide</div></div>
-          <div class="cs-ss"><span class="cs-ss-n">4</span><div class="cs-ss-t">Prototype</div></div>
-          <div class="cs-ss"><span class="cs-ss-n">5</span><div class="cs-ss-t">Test</div></div>
-        </div>
-        <div class="cs-img-2"><img src="https://a2zee.uk/_astro/customer_journey_map.CVW6Ijir.png" alt="Customer journey map" loading="lazy"><img src="https://a2zee.uk/_astro/interview.COopHMA1.png" alt="Interview synthesis" loading="lazy"></div>
-        <div class="cs-img"><img src="https://a2zee.uk/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s sketches" loading="lazy"></div>
-        <div class="cs-img"><img src="https://a2zee.uk/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes" loading="lazy"></div>
-        <div class="cs-img-4" style="margin-top:1rem">
-          <img src="https://a2zee.uk/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.wkzdukoN.png" alt="Welcome screen" loading="lazy">
-          <img src="https://a2zee.uk/_astro/2%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DC5HWQM8.png" alt="Flavour selection" loading="lazy">
-          <img src="https://a2zee.uk/_astro/3%20copy%20copy%20copy%20copy%20copy%20copy%20copy.BQRh6qAu.png" alt="Goal selection" loading="lazy">
-          <img src="https://a2zee.uk/_astro/4%20copy%20copy%20copy%20copy%20copy%20copy%20copy.CrzI97Ox.png" alt="User type selection" loading="lazy">
-        </div>
-      </div>
-      <div class="cs-block">
-        <h2 class="cs-h2">Results</h2>
-        <div class="cs-outcomes"><div class="cs-outcome"><div class="cs-outcome-val">87%</div><div class="cs-outcome-label">User approval for new concept</div></div><div class="cs-outcome"><div class="cs-outcome-val">100%</div><div class="cs-outcome-label">New users valued starter kits</div></div><div class="cs-outcome"><div class="cs-outcome-val">75%</div><div class="cs-outcome-label">Interest in community features</div></div><div class="cs-outcome"><div class="cs-outcome-val">5 days</div><div class="cs-outcome-label">Ambiguity to validated direction</div></div></div>
-        <div class="cs-test"><p>"Andrew's facilitation transformed our week. He navigated conflicting stakeholder priorities with diplomacy, kept us focused under tight deadlines, and delivered a prototype that exceeded expectations."</p><div class="cs-test-name">Sarah Mitchell</div><div class="cs-test-role">Head of Product, Blu Vape</div></div>
-      </div>
-      <a class="cs-next" href="harrods.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">Harrods Pre-Order — Luxury-grade pre-order experience design →</div></a>
+    <p class="cs-lead">A 5-Day Google Design Sprint. A cross-functional team used a time-boxed 5-day Google Design Sprint to rapidly reimagine Blu Vape's brand experience — moving from ambiguity to a validated product and loyalty direction in one week, achieving 87% user approval.</p>
+    <div class="cs-pills"><span class="cs-pill green">5 Days</span><span class="cs-pill green">87% User Approval</span><span class="cs-pill">Regulated Industry</span><span class="cs-pill">Sprint Facilitation</span></div>
+    <div class="cs-stats">
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">5 Days</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">UX/UI Designer &amp; Sprint Facilitator</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Miro · Adobe XD · FigJam</div></div>
+      <div class="cs-stat-cell"><div class="cs-stat-lbl">Result</div><div class="cs-stat-val blue">87% User Approval</div></div>
     </div>
-    <aside class="cs-sidebar"><div class="cs-sb-box"><div class="cs-sb-title">My Role</div><div class="cs-sb-item">UX/UI Designer &amp; Sprint Facilitator</div></div><div class="cs-sb-box"><div class="cs-sb-title">Sprint Team</div><div class="cs-sb-item">Product Manager</div><div class="cs-sb-item">Marketing Lead</div><div class="cs-sb-item">Retail Stakeholder</div><div class="cs-sb-item">UX Researcher</div></div><div class="cs-sb-box"><div class="cs-sb-title">Tools</div><div class="cs-sb-item">Miro · Figma · Adobe XD · FigJam</div></div></aside>
   </div>
+  <div class="cs-hero-img"><img src="../assets/images/bluvape_hero.png" alt="Blu Vape brand reimagination — high-fidelity mobile screens" loading="lazy"></div>
+
+  <div class="cs-meta-strip"><div class="cs-meta-cell"><div class="cs-meta-label">My Role</div><div class="cs-meta-item">UX/UI Designer &amp; Sprint Facilitator</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Sprint Team</div><div class="cs-meta-item">Sprint Facilitator (Me)</div><div class="cs-meta-item">Product Manager</div><div class="cs-meta-item">Marketing Lead</div><div class="cs-meta-item">Retail Stakeholder</div><div class="cs-meta-item">UX Researcher</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Tools Used</div><div class="cs-meta-item">Miro · Figma · Adobe XD</div><div class="cs-meta-item">FigJam · UXPilot · HTML/CSS</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Key Result</div><div class="cs-meta-item">87% user approval</div><div class="cs-meta-item">100% valued starter kits</div><div class="cs-meta-item">75% interest in community</div><div class="cs-meta-item">5 days: ambiguity → validated</div></div></div>
+
+  <div class="cs-layout"><div class="cs-main">
+
+    <div class="cs-block">
+      <h2 class="cs-h2">The Challenge</h2>
+      <div class="cs-quote"><p>We're losing market share to competitors who better understand what customers want. Our brand feels outdated, and the experience is fragmented.</p><cite>— Marketing Director, Blu Vape</cite></div>
+      <p class="cs-p">Blu Vape was experiencing declining market share driven by increased competition, shifting customer expectations, and weakening brand loyalty. Existing experiences were heavily product-focused with limited emotional connection, long-term engagement, or community value. A 5-day design sprint was chosen to create alignment quickly, explore bold ideas safely, and validate direction before committing to further investment.</p>
+    </div>
+
+    <div class="cs-block">
+      <h2 class="cs-h2">The 5-Day Sprint</h2>
+      <div class="cs-sprint">
+        <div class="cs-ss"><span class="cs-ss-n">1</span><div class="cs-ss-t">Understand</div></div>
+        <div class="cs-ss"><span class="cs-ss-n">2</span><div class="cs-ss-t">Diverge</div></div>
+        <div class="cs-ss"><span class="cs-ss-n">3</span><div class="cs-ss-t">Decide</div></div>
+        <div class="cs-ss"><span class="cs-ss-n">4</span><div class="cs-ss-t">Prototype</div></div>
+        <div class="cs-ss"><span class="cs-ss-n">5</span><div class="cs-ss-t">Test</div></div>
+      </div>
+      <div class="steps-wrap">
+        <div class="step-card"><div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Day 1: Understand</span></div>
+          <p class="sc-desc">Facilitated strategic alignment sessions with C-level stakeholders. Led customer journey mapping identifying friction points and emotional drop-offs.</p>
+          <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/customer_journey_map.CVW6Ijir.png" alt="Customer journey map" loading="lazy"><img src="https://az-astro.netlify.app/_astro/interview.COopHMA1.png" alt="Interview and research synthesis" loading="lazy"></div>
+        </div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Day 2: Diverge</span></div>
+          <p class="sc-desc">Ran collaborative ideation using Crazy 8s. Each team member worked independently before sharing to avoid groupthink, then used thematic clustering to identify patterns.</p>
+          <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Crazy 8s sketches" loading="lazy"></div>
+        </div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">03</span><span class="sc-title">Day 3: Decide</span></div>
+          <p class="sc-desc">Evaluated all concepts via dot voting and a decision matrix. The winning concept — an Integrated Loyalty Ecosystem — connected digital experiences with physical retail.</p>
+          <div class="features-grid" style="margin-top:1rem">
+            <div class="feat-card"><div class="icon-wrap sm"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div><div class="feat-title">Tiered loyalty rewards</div></div>
+            <div class="feat-card"><div class="icon-wrap sm"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="feat-title">Curated starter kits</div></div>
+            <div class="feat-card"><div class="icon-wrap sm"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="feat-title">Community engagement</div></div>
+            <div class="feat-card"><div class="icon-wrap sm"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="feat-title">Tobacconist portal</div></div>
+            <div class="feat-card"><div class="icon-wrap sm"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div class="feat-title">Exclusive experiences</div></div>
+          </div>
+        </div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">04</span><span class="sc-title">Day 4: Prototype</span></div>
+          <p class="sc-desc">Created mid-fidelity wireframes to validate information architecture, then high-fidelity prototypes reflecting the refreshed brand direction.</p>
+          <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes" loading="lazy"></div>
+          <div class="cs-img-4"><img src="https://az-astro.netlify.app/_astro/1%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy%20copy.wkzdukoN.png" alt="Welcome screen" loading="lazy"><img src="https://az-astro.netlify.app/_astro/2%20copy%20copy%20copy%20copy%20copy%20copy%20copy.DC5HWQM8.png" alt="Flavour selection" loading="lazy"><img src="https://az-astro.netlify.app/_astro/3%20copy%20copy%20copy%20copy%20copy%20copy%20copy.BQRh6qAu.png" alt="Goal selection" loading="lazy"><img src="https://az-astro.netlify.app/_astro/4%20copy%20copy%20copy%20copy%20copy%20copy%20copy.CrzI97Ox.png" alt="User type selection" loading="lazy"></div>
+        </div>
+        <div class="step-card"><div class="sc-head"><span class="sc-num">05</span><span class="sc-title">Day 5: Test</span></div>
+          <p class="sc-desc">Conducted moderated usability testing with 8 participants including existing customers, potential new users, and tobacconist representatives. Each session lasted approximately 45 minutes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-block">
+      <h2 class="cs-h2">Results</h2>
+      <div class="cs-outcomes">
+        <div class="cs-outcome"><div class="cs-outcome-val">87%</div><div class="cs-outcome-label">User approval for new concept</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">100%</div><div class="cs-outcome-label">New users valued starter kits</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">75%</div><div class="cs-outcome-label">Interest in community features</div></div>
+        <div class="cs-outcome"><div class="cs-outcome-val">5 days</div><div class="cs-outcome-label">Ambiguity to validated direction</div></div>
+      </div>
+      <div class="cs-test"><p>"Andrew's facilitation transformed our week. He navigated conflicting stakeholder priorities with diplomacy, kept us focused under tight deadlines, and delivered a prototype that exceeded expectations. The 87% user approval speaks for itself."</p><div class="cs-test-name">Sarah Mitchell</div><div class="cs-test-role">Head of Product, Blu Vape</div></div>
+    </div>
+
+    <a class="cs-next" href="harrods.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">Harrods Pre-Order — Luxury-grade pre-order experience design →</div></a>
+  </div></div>
 </div>
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>
   <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
   <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
-</div><div id="footer-slot"></div>
+</div>
+<div id="footer-slot"></div>
 <script src="../assets/js/shared.js"></script>
 </body>
 </html>
