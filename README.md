@@ -1,39 +1,52 @@
-# Andrew Zvoma — Portfolio
+# Andrew Zvoma — Portfolio Site
 
-UX/UI & Product Designer portfolio site.
+UX/UI & Product Designer portfolio. Built with plain HTML/CSS/JS — no build tools required.
 
-## Structure
+## File Structure
 
 ```
-├── index.html                        # Home page
+a2zee-site/
+├── index.html                    ← Home page
+├── README.md
 ├── assets/
-│   └── css/
-│       └── style.css                 # Shared styles
+│   ├── css/
+│   │   └── style.css             ← All shared styles
+│   └── js/
+│       └── shared.js             ← Nav & footer injection
 └── case-studies/
-    ├── index.html                    # Case studies listing
-    ├── mindnest.html                 # MindNest case study
-    ├── bluvape.html                  # Blu Vape Sprint case study
-    ├── surgeryprep.html              # SurgeryPrep case study
-    ├── harrods.html                  # Harrods Pre-Order case study
-    └── samsung.html                  # Samsung B2B case study
+    ├── index.html                ← Case studies listing
+    ├── mindnest.html
+    ├── bluvape.html
+    ├── surgeryprep.html
+    ├── harrods.html
+    └── samsung.html
 ```
 
-## Deploying to GitHub Pages
+## Deploy to GitHub Pages
 
-1. Push this repository to GitHub
-2. Go to **Settings → Pages**
-3. Under **Source**, select `Deploy from a branch`
-4. Choose `main` branch and `/ (root)` folder
-5. Click **Save**
+1. Create a new GitHub repository
+2. Upload all files (maintaining the folder structure above)
+3. Go to **Settings → Pages**
+4. Under **Source**, select `Deploy from a branch`
+5. Choose `main` (or `master`) branch, `/ (root)` folder → **Save**
+6. Your site will be live at `https://<username>.github.io/<repo-name>/`
 
-Your site will be live at `https://<your-username>.github.io/<repo-name>/`
+## Local Preview
 
-## Local Development
-
-Open `index.html` directly in a browser, or use a local server:
+Open `index.html` directly in a browser, or use a simple local server:
 
 ```bash
-npx serve .
-# or
+# Python
 python3 -m http.server 8000
+
+# Node (npx)
+npx serve .
 ```
+
+Then visit `http://localhost:8000`
+
+## Notes
+
+- All case study images load from the original CDN (`a2zee.uk/_astro/...`) — internet connection required for images
+- No dependencies, frameworks, or build steps needed
+- Fully responsive down to 375px

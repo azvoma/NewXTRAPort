@@ -1,109 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="../">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MindNest Case Study | Andrew Zvoma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-<nav>
-  <a href="../index.html" class="nav-logo">Andrew Zvoma</a>
-  <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="index.html" class="active">Case Studies</a></li>
-    <li><a href="../index.html#about">About</a></li>
-    <li><a href="../index.html#process">Process</a></li>
-    <li><a href="mailto:azvoma@gmail.com">Contact</a></li>
-  </ul>
-</nav>
+<div id="nav-slot"></div>
 
-<a class="cs-back" href="index.html">← Back to Case Studies</a>
+<div class="page-wrap">
+  <a class="cs-back" href="index.html">← Back to Case Studies</a>
 
-<div class="cs-hero-area">
-  <div class="cs-meta-row"><span class="cs-pill g">8 weeks</span><span class="cs-pill g">Product Designer</span></div>
-  <h1 class="cs-title">MindNest</h1>
-  <p class="cs-lead">35% reduction in week-one churn through improved onboarding. Redesigned the onboarding and habit formation experience for a wellness app, achieving a 35% reduction in week-one churn and 22% increase in daily active users.</p>
+  <div class="cs-hero">
+    <div class="cs-pills"><span class="cs-pill g">8 weeks</span><span class="cs-pill g">Product Designer</span></div>
+    <h1 class="cs-page-title">MindNest</h1>
+    <p class="cs-lead">35% reduction in week-one churn through improved onboarding. Redesigned the onboarding and habit formation experience for a wellness app, achieving a 35% reduction in week-one churn and 22% increase in daily active users.</p>
+  </div>
+
+  <div class="cs-hero-img">
+    <img src="https://a2zee.uk/_astro/small.urvlQFVU.png" alt="MindNest app screens">
+  </div>
+
+  <div class="cs-layout">
+    <div class="cs-main">
+
+      <div class="cs-block">
+        <h2 class="cs-h2">The Problem</h2>
+        <p class="cs-p">52% of users churned within the first 7 days, before experiencing the app's core value proposition. New users felt overwhelmed by options and unclear about how to build a consistent wellness routine.</p>
+      </div>
+
+      <div class="cs-block">
+        <h2 class="cs-h2">Design Process</h2>
+        <div class="steps-wrap">
+          <div class="step-card">
+            <div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Discovery &amp; Insights</span></div>
+            <p class="sc-desc">Analysed cohort data to identify churn patterns. Conducted diary studies with 8 users over 2 weeks. Found that users who set reminders had 3× better retention. Developed three key user archetypes with goals and barriers, and mapped behavioural patterns leading to drop-off.</p>
+          </div>
+          <div class="step-card">
+            <div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Ideation &amp; Exploration</span></div>
+            <p class="sc-desc">Explored habit formation frameworks (BJ Fogg, Nir Eyal). Sketched 15 different onboarding approaches. Prioritised a progressive goal-setting model and designed a trigger-routine-reward cycle to support long-term habit formation.</p>
+          </div>
+          <div class="step-card">
+            <div class="sc-head"><span class="sc-num">03</span><span class="sc-title">Design &amp; Prototype</span></div>
+            <p class="sc-desc">Created personalised onboarding based on user goals. Designed a streak system and gentle reminders. Built an iOS prototype with micro-animations covering the complete onboarding and home experience, along with animation specs for developers.</p>
+          </div>
+          <div class="step-card">
+            <div class="sc-head"><span class="sc-num">04</span><span class="sc-title">Testing &amp; Iteration</span></div>
+            <p class="sc-desc">Ran beta test with 50 users over 2 weeks. Tracked daily engagement and completion rates. Simplified goal-setting based on confusion feedback and produced a summary iteration report with key findings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-block">
+        <h2 class="cs-h2">Results &amp; Impact</h2>
+        <div class="cs-results">
+          <div class="cs-res"><div class="cs-res-num">-35%</div><div class="cs-res-label">Week-one churn</div></div>
+          <div class="cs-res"><div class="cs-res-num">+22%</div><div class="cs-res-label">Daily active users</div></div>
+          <div class="cs-res"><div class="cs-res-num">63%</div><div class="cs-res-label">Retention (up from 48%)</div></div>
+        </div>
+        <p class="cs-p">Users also began sharing their streaks on social media, creating organic growth through peer accountability.</p>
+      </div>
+
+      <div class="cs-block">
+        <h2 class="cs-h2">Key Learnings</h2>
+        <div class="cs-learnings">
+          <div class="cs-learn"><div class="cs-learn-icon">🔔</div><div><h4>Push notification timing</h4><p>Would have tested push notification timing more rigorously for optimal engagement.</p></div></div>
+          <div class="cs-learn"><div class="cs-learn-icon">👫</div><div><h4>Social features matter</h4><p>Could have added more social features earlier to increase accountability.</p></div></div>
+          <div class="cs-learn"><div class="cs-learn-icon">🎉</div><div><h4>Celebration moments</h4><p>Matter more than gamification points — small wins keep users motivated.</p></div></div>
+          <div class="cs-learn"><div class="cs-learn-icon">🎯</div><div><h4>Small, achievable goals</h4><p>Are key to habit formation — don't let users set unrealistic expectations.</p></div></div>
+        </div>
+      </div>
+
+      <a class="cs-next" href="surgeryprep.html">
+        <div class="cs-next-lbl">Next Case Study</div>
+        <div class="cs-next-title">SurgeryPrep — Mobile companion for surgical patient guidance →</div>
+      </a>
+
+    </div>
+
+    <aside class="cs-sidebar">
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Team</div>
+        <div class="cs-sb-item">Product Designer (Me)</div>
+        <div class="cs-sb-item">Product Manager</div>
+        <div class="cs-sb-item">2 iOS Engineers</div>
+        <div class="cs-sb-item">Content Strategist</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">My Role</div>
+        <div class="cs-sb-item">User research &amp; persona development</div>
+        <div class="cs-sb-item">End-to-end onboarding design</div>
+        <div class="cs-sb-item">Habit loop mechanics &amp; gamification</div>
+        <div class="cs-sb-item">Content team collaboration</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Status</div>
+        <div class="cs-sb-item">Shipped to production with measurable impact on retention and engagement.</div>
+      </div>
+      <div class="cs-sb-box">
+        <div class="cs-sb-title">Constraints</div>
+        <div class="cs-sb-item">Must work offline for core features</div>
+        <div class="cs-sb-item">Content library already established</div>
+      </div>
+    </aside>
+  </div>
 </div>
 
-<div class="cs-main-img"><img src="https://a2zee.uk/_astro/small.urvlQFVU.png" alt="MindNest app screens"></div>
-
-<div class="cs-body">
-  <div class="cs-content">
-
-    <div class="cs-sec">
-      <h2 class="cs-h2">The Problem</h2>
-      <p class="cs-p">52% of users churned within the first 7 days, before experiencing the app's core value proposition. New users felt overwhelmed by options and unclear about how to build a consistent wellness routine.</p>
-    </div>
-
-    <div class="cs-sec">
-      <h2 class="cs-h2">Design Process</h2>
-      <div class="steps-wrap">
-        <div class="step-card">
-          <div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Discovery &amp; Insights</span></div>
-          <p class="sc-desc">Analysed cohort data to identify churn patterns. Conducted diary studies with 8 users over 2 weeks. Found that users who set reminders had 3× better retention. Developed three key user archetypes with goals and barriers, and mapped behavioural patterns leading to drop-off.</p>
-        </div>
-        <div class="step-card">
-          <div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Ideation &amp; Exploration</span></div>
-          <p class="sc-desc">Explored habit formation frameworks (BJ Fogg, Nir Eyal). Sketched 15 different onboarding approaches. Prioritised a progressive goal-setting model. Designed trigger-routine-reward cycle to support long-term habit formation.</p>
-        </div>
-        <div class="step-card">
-          <div class="sc-head"><span class="sc-num">03</span><span class="sc-title">Design &amp; Prototype</span></div>
-          <p class="sc-desc">Created personalised onboarding based on user goals. Designed a streak system and gentle reminders. Built an iOS prototype with micro-animations covering the complete onboarding and home experience, along with animation specs for developers.</p>
-        </div>
-        <div class="step-card">
-          <div class="sc-head"><span class="sc-num">04</span><span class="sc-title">Testing &amp; Iteration</span></div>
-          <p class="sc-desc">Ran beta test with 50 users over 2 weeks. Tracked daily engagement and completion rates. Simplified goal-setting based on confusion feedback and produced a summary iteration report with key findings.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="cs-sec">
-      <h2 class="cs-h2">Results &amp; Impact</h2>
-      <div class="cs-results">
-        <div class="cs-res"><div class="cs-res-num">-35%</div><div class="cs-res-label">Week-one churn</div></div>
-        <div class="cs-res"><div class="cs-res-num">+22%</div><div class="cs-res-label">Daily active users</div></div>
-        <div class="cs-res"><div class="cs-res-num">63%</div><div class="cs-res-label">Retention (up from 48%)</div></div>
-      </div>
-      <p class="cs-p">Users also began sharing their streaks on social media, creating organic growth through peer accountability.</p>
-    </div>
-
-    <div class="cs-sec">
-      <h2 class="cs-h2">Key Learnings</h2>
-      <div class="cs-learnings">
-        <div class="cs-learn"><div class="cs-learn-icon">🔔</div><div><h4>Push notification timing</h4><p>Would have tested push notification timing more rigorously for optimal engagement.</p></div></div>
-        <div class="cs-learn"><div class="cs-learn-icon">👫</div><div><h4>Social features matter</h4><p>Could have added more social features earlier to increase accountability.</p></div></div>
-        <div class="cs-learn"><div class="cs-learn-icon">🎉</div><div><h4>Celebration moments</h4><p>Matter more than gamification points — small wins keep users motivated.</p></div></div>
-        <div class="cs-learn"><div class="cs-learn-icon">🎯</div><div><h4>Small, achievable goals</h4><p>Are key to habit formation — don't let users set unrealistic expectations.</p></div></div>
-      </div>
-    </div>
-
-    <a class="cs-next" href="surgeryprep.html">
-      <div class="cs-next-lbl">Next Case Study</div>
-      <div class="cs-next-title">SurgeryPrep — Mobile companion for surgical patient guidance →</div>
-    </a>
-
-  </div>
-  <div class="cs-sidebar">
-    <div class="cs-sb-box"><div class="cs-sb-title">Team</div><div class="cs-sb-item">Product Designer (Me)</div><div class="cs-sb-item">Product Manager</div><div class="cs-sb-item">2 iOS Engineers</div><div class="cs-sb-item">Content Strategist</div></div>
-    <div class="cs-sb-box"><div class="cs-sb-title">My Role</div><div class="cs-sb-item">User research &amp; persona development</div><div class="cs-sb-item">End-to-end onboarding design</div><div class="cs-sb-item">Habit loop mechanics &amp; gamification</div><div class="cs-sb-item">Content team collaboration</div></div>
-    <div class="cs-sb-box"><div class="cs-sb-title">Status</div><div class="cs-sb-item">Shipped to production with measurable impact on retention and engagement.</div></div>
-    <div class="cs-sb-box"><div class="cs-sb-title">Constraints</div><div class="cs-sb-item">Must work offline for core features</div><div class="cs-sb-item">Content library already established</div></div>
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <h2 class="cta-title">Interested in working <em>together?</em></h2>
+    <p class="cta-desc">Let's discuss how I can help bring your product vision to life.</p>
+    <div class="btn-row"><a href="mailto:azvoma@gmail.com" class="btn btn-light">Get In Touch</a></div>
   </div>
 </div>
 
-<footer>
-  <span class="footer-copy">© 2026 Andrew Zvoma. All rights reserved.</span>
-  <div class="footer-links">
-    <a href="mailto:azvoma@gmail.com">azvoma@gmail.com</a>
-    <a href="index.html">Case Studies</a>
-    <a href="../index.html#about">About</a>
-  </div>
-</footer>
-
+<div id="footer-slot"></div>
+<script src="../assets/js/shared.js"></script>
 </body>
 </html>
