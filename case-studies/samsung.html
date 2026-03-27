@@ -82,6 +82,18 @@
 .kl-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
 .kl-text{font-size:.9rem;color:var(--text-2);line-height:1.65}
 .kl-text strong{font-weight:700;color:var(--text)}
+
+/* laptop mockup */
+.laptop-mockup{margin:2rem 0;perspective:1200px}
+.laptop-lid{background:#1a1a1a;border-radius:12px 12px 0 0;padding:12px 14px 8px;box-shadow:0 -2px 0 #333 inset}
+.laptop-cam{width:8px;height:8px;border-radius:50%;background:#333;margin:0 auto 8px}
+.laptop-screen-wrap{background:#000;border-radius:6px;overflow:hidden}
+.laptop-screen{overflow-y:scroll;overflow-x:hidden;height:340px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;cursor:ns-resize}
+.laptop-screen::-webkit-scrollbar{display:none}
+.laptop-screen img{width:100%;display:block}
+.laptop-base{background:#222;border-radius:0 0 10px 10px;padding:6px 14px 10px;position:relative}
+.laptop-hinge{height:4px;background:#111;border-radius:0 0 4px 4px;margin-bottom:6px}
+.laptop-trackpad{width:60px;height:36px;background:#2a2a2a;border:1px solid #333;border-radius:6px;margin:0 auto}
 @media(max-width:700px){
   .cs-overview{grid-template-columns:1fr 1fr}
   .insight-grid{grid-template-columns:1fr 1fr}
@@ -165,7 +177,7 @@
   <h2 class="ed-h2">From strategy to structure</h2>
   <p class="ed-p">Multiple narrative and structural page concepts were explored through wireframing and rapid prototyping. A value vs. effort matrix was used to prioritise concepts aligned with business impact. Three things were deliberately rejected: aggressive lead-capture forms (risked eroding trust), feature-heavy product sections (reinforced vendor perception), and sales-driven language (conflicted with partnership positioning). The final approach focused on <strong>clarity, credibility, and restraint</strong>.</p>
   <div class="img-research-2">
-    <img src="https://az-astro.netlify.app/_astro/cbliimemci6sokvz.CBNatdHa.png" alt="Wireframe sketches exploring page structure">
+    <img src="../assets/images/samsung_sketch.png" alt="Concept sketches exploring page structure and layout options">
     <img src="https://az-astro.netlify.app/_astro/kaeeuvjspp8byvpn.CUqbp19Z.png" alt="Ideation board mapping concepts to trust and business value">
   </div>
   <div class="feat-list">
@@ -190,6 +202,23 @@
     <img src="https://az-astro.netlify.app/_astro/bj4xrm7ktqkna6sz_(1).Bs5NSWnd.png" alt="Design iteration 3 — consultative CTAs and lead qualification">
   </div>
 
+  <p class="ed-p" style="margin-top:1.5rem">The final high-fidelity design delivered a fully responsive experience across desktop, tablet, and mobile — here's how the flagship B2B page looks at desktop scale:</p>
+
+  <div class="laptop-mockup">
+    <div class="laptop-lid">
+      <div class="laptop-cam"></div>
+      <div class="laptop-screen-wrap">
+        <div class="laptop-screen">
+          <img src="https://az-astro.netlify.app/_astro/small.urvlQFVU.png" alt="Samsung B2B high fidelity desktop design — Tomorrow's Homes, Today">
+        </div>
+      </div>
+    </div>
+    <div class="laptop-base">
+      <div class="laptop-hinge"></div>
+      <div class="laptop-trackpad"></div>
+    </div>
+  </div>
+
   <hr class="ed-divider">
 
   <span class="ed-label">Results</span>
@@ -204,7 +233,7 @@
   <h2 class="ed-h2">What I learned</h2>
   <div class="kl-list"><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Partnership beats product.</strong> B2B audiences respond to relationship-driven narratives — remove the product grid and replace it with proof of shared success.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Industry specificity matters.</strong> Tailored messaging builds credibility faster than any amount of generic positioning, especially with time-poor decision-makers.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Stakeholder alignment is the design work.</strong> Facilitating cross-functional workshops and translating competing priorities into a unified vision was as important as the visual output.</div></div><div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Restraint is a design decision.</strong> Removing aggressive lead forms and promotional language wasn't a compromise — it was the strategy.</div></div></div>
 
-  <a class="ed-next" href="mindnest.html"><span class="ed-next-lbl">Next project</span><div class="ed-next-title">MindNest — Wellness app redesign that reduced week-one churn →</div></a>
+  <a class="ed-next" href="bluebadge.html"><span class="ed-next-lbl">Next project</span><div class="ed-next-title">Blue Badge Digital Companion — GDS-compliant accessibility redesign →</div></a>
   <div style="height:4rem"></div>
 </div>
 <div class="cta-strip">
