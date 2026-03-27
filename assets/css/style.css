@@ -682,3 +682,35 @@ footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 3rem 0
   .phone-frame img { border-radius: 14px; }
 }
 .ns-icon { display: none; }
+
+/* ============================================================
+   IMAGE LIGHTBOX — click any .zoomable img to enlarge
+   ============================================================ */
+.zoomable { cursor: zoom-in; }
+.zoomable:hover { opacity: .92; transition: opacity .15s; }
+
+#img-lightbox {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.88);
+  align-items: center; justify-content: center;
+  padding: 1.5rem;
+  cursor: zoom-out;
+}
+#img-lightbox.open { display: flex; }
+#img-lightbox img {
+  max-width: 92vw; max-height: 92vh;
+  border-radius: 6px;
+  box-shadow: 0 8px 48px rgba(0,0,0,.6);
+  object-fit: contain;
+  cursor: default;
+  animation: lb-in .15s ease;
+}
+@keyframes lb-in { from { opacity:0; transform:scale(.94) } to { opacity:1; transform:scale(1) } }
+#img-lightbox-close {
+  position: fixed; top: 1rem; right: 1.25rem;
+  color: #fff; font-size: 1.75rem; font-weight: 300;
+  cursor: pointer; line-height: 1; opacity: .7;
+  background: none; border: none; padding: .25rem;
+}
+#img-lightbox-close:hover { opacity: 1; }
