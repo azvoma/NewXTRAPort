@@ -85,11 +85,26 @@
 /* image caption */
 .img-caption{font-size:.78rem;color:var(--text-3);text-align:center;margin-top:.4rem;font-style:italic;margin-bottom:1.25rem}
 /* lofi screens — 3 full width stacked */
-.lofi-stack{display:grid;gap:1rem;margin:1.75rem 0}
+.lofi-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0}
 .lofi-stack img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
 /* wcag matrix — full width but with max height and scroll */
 .matrix-wrap{margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);max-height:480px;overflow-y:auto}
 .matrix-wrap img{width:100%;display:block}
+
+/* hifi screens grid — matches lofi layout */
+.hifi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.75rem 0}
+.hifi-grid img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.screen-label{font-size:.72rem;color:var(--text-3);text-align:center;margin-top:.4rem;line-height:1.4;font-style:italic}
+/* wcag list */
+.wcag-list{display:grid;gap:.5rem;margin:1rem 0}
+.wcag-item{display:grid;grid-template-columns:48px 1fr;gap:.85rem;align-items:start;padding:.65rem .85rem;background:var(--bg-soft);border-radius:var(--r);border:1px solid var(--border)}
+.wcag-code{font-size:.72rem;font-weight:700;color:var(--blue);font-family:monospace;padding-top:.1rem}
+.wcag-detail{font-size:.85rem;color:var(--text-2);line-height:1.55}
+.wcag-detail strong{font-weight:700;color:var(--text)}
+@media(max-width:700px){
+  .hifi-grid{grid-template-columns:1fr 1fr}
+  .lofi-stack{grid-template-columns:1fr 1fr}
+}
 @media(max-width:700px){
   .cs-overview{grid-template-columns:1fr 1fr}
   .insight-grid{grid-template-columns:1fr 1fr}
@@ -152,7 +167,7 @@
 
   <!-- AS-IS vs TO-BE service map — the centrepiece of the problem section -->
   <div class="img-full">
-    <img src="../assets/images/bluebadge_hero.png" alt="As-Is vs To-Be service map: The Paper Trail — showing the painful paper-based application process versus the redesigned digital companion">
+    <img src="../assets/images/bb_as_is.jpg" alt="As-Is vs To-Be service map: The Paper Trail — Discovery, Application, Verification, Granting stages showing pain points in the paper process versus value adds in the digital companion">
   </div>
   <p class="img-caption">The As-Is vs To-Be service map I created during discovery — mapping the four pain points in the paper process against the digital solution's value adds at each stage.</p>
 
@@ -165,13 +180,6 @@
     <li>Screen reader and keyboard navigation failures on the existing digital service</li>
   </ul>
 
-  <hr class="ed-divider">
-
-  <!-- ── MY ROLE ── -->
-  <span class="ed-label">My Role</span>
-  <h2 class="ed-h2">Leading design end-to-end in an agile, multidisciplinary team</h2>
-  <p class="ed-p">As Lead Product Designer, I owned the design of the service from discovery through to handoff. I worked within an agile team — Product Manager, Tech Lead, QA Engineer, Content Designer, and User Researcher — applying GOV.UK Design System patterns and GDS service standards throughout, and leading accessibility audits and assistive technology testing at every stage.</p>
-  <p class="ed-p">Accessibility was embedded from the very first sketch. Every design decision was validated against WCAG 2.2 AA criteria. I collaborated closely with the development team to ensure accessible, responsive implementation using semantic HTML, CSS, and JavaScript.</p>
 
   <hr class="ed-divider">
 
@@ -209,21 +217,6 @@
     </div>
   </div>
 
-  <hr class="ed-divider">
-
-  <!-- ── INSIGHTS ── -->
-  <span class="ed-label">Insights</span>
-  <h2 class="ed-h2">Defining the design challenge through the lens of real users</h2>
-  <p class="ed-p"><strong>Problem Statement:</strong> How might we redesign the Blue Badge application so that eligible people — including those with physical, visual, and cognitive disabilities — can complete their application independently, with confidence, without needing to call for support?</p>
-  <p class="ed-p">Two primary personas anchored every design decision. Gerald represents the majority of applicants — older, less confident digitally, applying independently with dignity as his primary goal. Sarah represents carers and tech-savvy users who need speed and clarity. Both exposed critical failure modes in the existing service.</p>
-
-  <!-- User personas — full width, the real uploaded image -->
-  <div class="img-research">
-    <img src="../assets/images/bluebadge_hero.png" alt="User personas: Gerald Thompson, 72, motor-impaired veteran — and Sarah Chen, 28, tech-savvy student and caregiver">
-  </div>
-  <p class="img-caption">Gerald Thompson (72) — motor-impaired, prefers physical mail, finds websites "too fiddly." Sarah Chen (28) — tech-savvy caregiver who needs information fast. Together they exposed every critical failure in the existing service.</p>
-
-  <p class="ed-p"><strong>Design implication:</strong> Because the most vulnerable users had the least tolerance for errors, ambiguity, or lost progress — every design decision had to serve Gerald first. If it worked for Gerald, it would work for everyone.</p>
 
   <hr class="ed-divider">
 
@@ -271,42 +264,39 @@
   </div>
   <p class="img-caption">Low-fidelity wireframes applying the GOV.UK question-per-page pattern. Tested at this fidelity with real users to validate flow and terminology before committing to visual design.</p>
 
-  <!-- WCAG compliance matrix — scrollable, full width -->
-  <p class="ed-p" style="margin-bottom:.5rem"><strong>WCAG 2.2 Compliance Matrix</strong> — every criterion evidenced during design, not retrospectively:</p>
-  <div class="matrix-wrap">
-    <img src="../assets/images/bb_wcag_matrix.jpg" alt="WCAG 2.2 Compliance Matrix showing 9 criteria, all passing — including Focus Not Obscured, Dragging Movements, Target Size, Resize Text, Reflow, Timing Adjustable, Labels or Instructions, and Status Messages">
+  <!-- WCAG compliance matrix — rich text + image -->
+  <p class="ed-p" style="margin-bottom:.5rem"><strong>WCAG 2.2 compliance matrix</strong></p>
+  <p class="ed-p">Nine WCAG 2.2 AA criteria were formally assessed — each with specific implementation evidence, testing methodology, and a documented historical issue from the old system that the new design resolved. 100% pass rate across all assessed criteria.</p>
+  <div class="wcag-list">
+    <div class="wcag-item"><div class="wcag-code">2.4.11</div><div class="wcag-detail"><strong>Focus Not Obscured</strong> — custom focus rings visible at all zoom levels</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.5.7</div><div class="wcag-detail"><strong>Dragging Movements</strong> — all uploads accessible via click-to-browse, no drag required</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.5.8</div><div class="wcag-detail"><strong>Target Size</strong> — all interactive elements minimum 44×44px</div></div>
+    <div class="wcag-item"><div class="wcag-code">1.4.4</div><div class="wcag-detail"><strong>Resize Text</strong> — all content resizable to 200% with no loss of functionality</div></div>
+    <div class="wcag-item"><div class="wcag-code">1.4.10</div><div class="wcag-detail"><strong>Reflow</strong> — single-column layout, no horizontal scroll at 320px</div></div>
+    <div class="wcag-item"><div class="wcag-code">2.2.1</div><div class="wcag-detail"><strong>Timing Adjustable</strong> — no session timeouts; auto-save every 30 seconds</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.2.6</div><div class="wcag-detail"><strong>Consistent Help</strong> — 'Contact Council' link in identical position on all 7 pages</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.3.2</div><div class="wcag-detail"><strong>Labels or Instructions</strong> — every field has visible label, format example, and error guidance</div></div>
+    <div class="wcag-item"><div class="wcag-code">3.3.7</div><div class="wcag-detail"><strong>Accessible Authentication</strong> — magic-link login removes cognitive function test</div></div>
   </div>
-  <p class="img-caption">9 WCAG 2.2 AA criteria assessed, 100% pass rate. Each criterion documented with implementation evidence, testing method, and the historical issue it resolved. Audit date: March 2026.</p>
+  <div class="matrix-wrap" style="margin-top:1.25rem">
+    <img src="../assets/images/bb_wcag_matrix.jpg" alt="WCAG 2.2 Compliance Matrix table — 9 criteria, all passing, with implementation evidence and historical issues documented">
+  </div>
+  <p class="img-caption">The formal compliance matrix — each criterion evidenced with implementation detail, testing method, and the historical issue from the old system it resolved. Audit date: March 2026.</p>
 
-  <!-- High-fi screens in phone frames -->
-  <p class="ed-p" style="margin-top:1.5rem"><strong>Final high-fidelity screens</strong> — the complete GOV.UK application experience:</p>
-  <div class="phone-showcase">
-    <div class="phone-device">
-      <div class="phone-shell">
-        <div class="phone-screen">
-          <img src="../assets/images/bb_hifi_1.png" alt="Your application — task list showing Your details (Completed), Eligibility (Completed), Your condition (In progress), Supporting evidence (Not started), Declaration (Not started) with Continue application CTA">
-        </div>
-      </div>
-      <p class="phone-caption">Task list</p>
-      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
+  <!-- High-fi screens — flat side-by-side grid matching lo-fi layout -->
+  <p class="ed-p" style="margin-top:1.5rem"><strong>High-fidelity screens</strong> — built directly in the GOV.UK Prototype Kit using authentic GDS typography (GDS Transport), spacing, and components. This fidelity was deliberate: users like Gerald need to trust the environment before submitting sensitive medical documentation.</p>
+  <div class="hifi-grid">
+    <div>
+      <img src="../assets/images/bb_hifi_1.png" alt="Hi-fi Screen 1: GDS Task List with Completed / In Progress / Not Started status badges">
+      <p class="screen-label">Screen 1: GDS Task List — application overview with status badges</p>
     </div>
-    <div class="phone-device">
-      <div class="phone-shell">
-        <div class="phone-screen">
-          <img src="../assets/images/bb_hifi_2.png" alt="Upload your supporting evidence — Section 4 of 5, drag and drop file upload with Choose files button and doctor_letter.pdf uploaded confirmation">
-        </div>
-      </div>
-      <p class="phone-caption">Evidence upload</p>
-      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
+    <div>
+      <img src="../assets/images/bb_hifi_2.png" alt="Hi-fi Screen 2: Evidence upload — dual input method, 44px+ targets, success confirmation">
+      <p class="screen-label">Screen 2: Evidence upload — dual input method, 44px+ targets, success confirmation</p>
     </div>
-    <div class="phone-device">
-      <div class="phone-shell">
-        <div class="phone-screen">
-          <img src="../assets/images/bb_hifi_3.png" alt="Check your email — magic link sign-in confirmation with Resend sign-in link and Contact support options">
-        </div>
-      </div>
-      <p class="phone-caption">Magic link sign-in</p>
-      <div class="scroll-hint"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg> scroll to explore</div>
+    <div>
+      <img src="../assets/images/bb_hifi_3.png" alt="Hi-fi Screen 3: Magic-link email confirmation — passwordless, no cognitive function test">
+      <p class="screen-label">Screen 3: Magic-link email confirmation — passwordless, no cognitive function test</p>
     </div>
   </div>
 
