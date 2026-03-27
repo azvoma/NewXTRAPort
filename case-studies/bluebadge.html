@@ -9,115 +9,234 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
 <style>
-.cs-meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2rem 0}
-.cs-meta-cell{background:var(--white);padding:1.1rem 1.25rem}
-.cs-meta-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.4rem}
-.cs-meta-item{font-size:.82rem;color:var(--text-2);line-height:1.5;margin-bottom:.15rem}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1.1rem 0}
-.feat-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:.9rem}
-.feat-icon{font-size:1.1rem;margin-bottom:.3rem}
-.feat-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
-.feat-desc{font-size:.75rem;color:var(--text-3);line-height:1.5}
-.learnings{display:grid;gap:.65rem;margin:1rem 0}
-.learning{display:flex;gap:.75rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
-.learn-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.45rem}
-.learn-text{font-size:.875rem;color:var(--text-2);line-height:1.65}
-.learn-text strong{font-weight:700;color:var(--text)}
-.dp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.25rem 0}
-.dp-step{background:#fff;padding:.9rem .6rem;text-align:center}
-.dp-num{font-size:.65rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem}
-.dp-label{font-size:.72rem;font-weight:600;color:var(--text)}
-.cs-sprint{display:flex;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.1rem 0}
-.cs-ss{flex:1;background:var(--white);padding:.85rem .5rem;text-align:center}
-.cs-ss-n{font-size:.65rem;color:var(--blue);display:block;margin-bottom:.2rem;font-weight:700}
-.cs-ss-t{font-size:.72rem;font-weight:600;color:var(--text)}
+.cs-editorial{max-width:860px;margin:0 auto;padding:0 var(--px,1.5rem)}
+.cs-overview{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:2.5rem 0}
+.cs-ov-cell{background:var(--white);padding:1.1rem 1.25rem}
+.cs-ov-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-3);margin-bottom:.35rem}
+.cs-ov-val{font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
+.ed-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-bottom:.35rem;display:block}
+.ed-h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;color:var(--text);margin-bottom:1.1rem}
+.ed-p{font-size:.95rem;color:var(--text-2);line-height:1.82;margin-bottom:.9rem}
+.ed-p strong{font-weight:700;color:var(--text)}
+.ed-quote{border-left:3px solid var(--blue);margin:1.75rem 0;padding:.85rem 1.25rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+.ed-quote p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.65;margin-bottom:.3rem}
+.ed-quote cite{font-size:.78rem;color:var(--text-3);font-style:normal}
+.ed-divider{border:none;border-top:1px solid var(--border);margin:3rem 0}
+.img-full{margin:1.75rem 0;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)}
+.img-full img{width:100%;display:block}
+.img-research{width:100%;margin:1.75rem 0;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)}
+.img-research img{width:100%;display:block}
+.img-research-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.75rem 0}
+.img-research-2 img{width:100%;border-radius:var(--r-lg);border:1px solid var(--border);display:block}
+.img-narrow{width:70%;margin:1.75rem auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);display:block}
+.img-narrow img{width:100%;display:block}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin:1.5rem 0}
+.insight-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem}
+.insight-num{font-size:1.6rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.35rem}
+.insight-text{font-size:.82rem;color:var(--text-2);line-height:1.55}
+.feat-list{display:grid;gap:.6rem;margin:1.25rem 0}
+.feat-row{display:flex;gap:.85rem;align-items:flex-start;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.feat-row:last-child{border-bottom:none}
+.feat-row-num{font-size:.7rem;font-weight:700;color:var(--blue);background:var(--blue-light);border:1px solid var(--blue-border);min-width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem}
+.feat-row-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:.15rem}
+.feat-row-desc{font-size:.82rem;color:var(--text-3);line-height:1.5}
+.outcomes-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;margin:1.75rem 0}
+.outcome-cell{background:var(--white);padding:1.5rem 1rem;text-align:center}
+.outcome-val{font-size:2rem;font-weight:800;color:var(--blue);line-height:1;margin-bottom:.3rem}
+.outcome-label{font-size:.72rem;color:var(--text-3);line-height:1.4}
+.ed-test{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;margin:1.75rem 0}
+.ed-test p{font-size:1rem;font-style:italic;color:var(--text-2);line-height:1.75;margin-bottom:.85rem}
+.ed-test-name{font-size:.9rem;font-weight:700;color:var(--text)}
+.ed-test-role{font-size:.78rem;color:var(--text-3)}
+.ed-next{display:block;border-top:2px solid var(--border);padding:2rem 0 0;margin-top:3rem}
+.ed-next-lbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-3);margin-bottom:.4rem;display:block}
+.ed-next-title{font-size:1.25rem;font-weight:800;color:var(--blue);letter-spacing:-.01em}
+.ed-next:hover .ed-next-title{text-decoration:underline}
+.cs-ul{padding-left:1.2rem;margin:.75rem 0 1rem}
+.cs-ul li{font-size:.92rem;color:var(--text-2);margin-bottom:.35rem;line-height:1.65}
+.kl-list{display:grid;gap:.75rem;margin:1rem 0}
+.kl-item{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--r-lg)}
+.kl-bullet{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:.4rem}
+.kl-text{font-size:.9rem;color:var(--text-2);line-height:1.65}
+.kl-text strong{font-weight:700;color:var(--text)}
+/* GDS tag */
+.gds-badge{display:inline-flex;align-items:center;gap:6px;background:#00703c;color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .8rem;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1rem}
 @media(max-width:700px){
-  .cs-meta-strip{grid-template-columns:1fr 1fr}
-  .features-grid{grid-template-columns:1fr 1fr}
-  .dp-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-overview{grid-template-columns:1fr 1fr}
+  .insight-grid{grid-template-columns:1fr 1fr}
+  .img-narrow{width:100%}
+  .img-research-2{grid-template-columns:1fr}
+  .outcomes-row{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 <div id="nav-slot"></div>
-<div class="cs-detail">
+
+<div class="cs-editorial">
   <a class="cs-back" href="index.html">← Back to Case Studies</a>
-  <div class="cs-hero">
-    <span class="cs-tag">Case Study · 10 Weeks · Lead Product Designer</span>
+
+  <div style="padding:2.5rem 0 0">
+    <div class="gds-badge">GOV.UK Design System</div>
+    <div class="cs-pills" style="margin-bottom:1rem">
+      <span class="cs-pill">10 Weeks</span>
+      <span class="cs-pill blue">Lead Product Designer</span>
+      <span class="cs-pill green">40% Reduction in Drop-off</span>
+      <span class="cs-pill green">100% WCAG 2.2 AA</span>
+      <span class="cs-pill">GDS · Agile</span>
+    </div>
     <h1 class="cs-page-title">Blue Badge Digital Companion</h1>
-    <p class="cs-lead">A complete redesign of the Blue Badge scheme digital service for 2.5M eligible users in England — streamlining access to disabled parking permits through GDS-compliant, WCAG 2.2 AA accessible design that cut incomplete applications by 40%.</p>
-    <div class="cs-pills"><span class="cs-pill blue">GDS · GOV.UK Design System</span><span class="cs-pill green">40% Reduction in Drop-off</span><span class="cs-pill green">WCAG 2.2 AA</span><span class="cs-pill">Agile Team</span></div>
-    <div class="cs-stats">
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Timeline</div><div class="cs-stat-val blue">10 Weeks</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Role</div><div class="cs-stat-val">Lead UX/UI &amp; Accessibility</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Tools</div><div class="cs-stat-val">Figma · Sketch · Miro · HTML/CSS/JS</div></div>
-      <div class="cs-stat-cell"><div class="cs-stat-lbl">Standards</div><div class="cs-stat-val">WCAG 2.2 AA · GDS</div></div>
-    </div>
+    <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">A complete redesign of the Blue Badge scheme digital service for 2.5 million eligible users in England — streamlining access to disabled parking permits through GDS-compliant, WCAG 2.2 AA accessible design.</p>
   </div>
-  <div class="cs-hero-img"><img src="../assets/images/bluebadge_hero.png" alt="Blue Badge Digital Companion — GOV.UK service design screens" loading="lazy"></div>
 
-  <div class="cs-meta-strip"><div class="cs-meta-cell"><div class="cs-meta-label">My Role</div><div class="cs-meta-item">Lead Product Designer</div><div class="cs-meta-item">(UX/UI &amp; Accessibility)</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Team</div><div class="cs-meta-item">Product Manager</div><div class="cs-meta-item">Tech Lead</div><div class="cs-meta-item">QA Engineer</div><div class="cs-meta-item">Content Designer</div><div class="cs-meta-item">User Researcher</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Standards</div><div class="cs-meta-item">WCAG 2.2 AA</div><div class="cs-meta-item">GDS Service Manual</div><div class="cs-meta-item">GOV.UK Content Style Guide</div></div><div class="cs-meta-cell"><div class="cs-meta-label">Outcome</div><div class="cs-meta-item">40% drop-off reduction</div><div class="cs-meta-item">85% fewer support queries</div><div class="cs-meta-item">2.5M users served</div><div class="cs-meta-item">100% WCAG 2.2 AA</div></div></div>
+  <div class="cs-overview">
+    <div class="cs-ov-cell"><div class="cs-ov-label">Timeline</div><div class="cs-ov-val">10 Weeks</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Role</div><div class="cs-ov-val">Lead UX/UI &amp; Accessibility Designer</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-label">Tools</div><div class="cs-ov-val">Figma · Sketch · Miro · HTML/CSS/JS</div></div>
+    <div class="cs-ov-cell"><div class="cs-ov-cell"><div class="cs-ov-label">Standards</div><div class="cs-ov-val">WCAG 2.2 AA · GDS Service Manual · GOV.UK Design System</div></div></div>
+  </div>
 
-  <div class="cs-layout"><div class="cs-main">
+  <div class="img-full"><img src="../assets/images/bluebadge_hero.png" alt="Blue Badge Digital Companion — GOV.UK service design screens showing application flow"></div>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">The paper trail was failing people</h2>
-      <p class="cs-p">The existing Blue Badge application process was paper-heavy, confusing, and inaccessible. Drop-off rates were high, support queries were overwhelming call centres, and many eligible applicants never completed their application at all.</p>
-      <p class="cs-p">The challenge was to redesign the end-to-end digital service using GDS principles and the GOV.UK Design System — building something genuinely usable by people with a wide range of physical and cognitive disabilities, from the first touchpoint to the final confirmation.</p>
-      <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/customer_journey_map.CVW6Ijir.png" alt="Service journey map showing pain points across the paper-based process" loading="lazy"></div>
-    </div>
+  <hr class="ed-divider">
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Understanding the people behind the application</h2>
-      <p class="cs-p">Before designing anything, I ran a structured discovery phase: reviewing existing analytics, shadowing phone support agents, and conducting contextual interviews with applicants across three eligibility categories.</p>
-      <h3 class="cs-h3">Research Synthesis</h3>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/patient_interview_report.CPMFK0Kj.png" alt="Research synthesis — interview findings" loading="lazy"><img src="https://az-astro.netlify.app/_astro/primary_patient_persona.DcOeM3y7.png" alt="Primary user persona — Gerald Thomas, 72" loading="lazy"></div>
-      <h3 class="cs-h3">User Flow Design</h3>
-      <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Secondary persona — Sarah Chen, 28" loading="lazy"><img src="https://az-astro.netlify.app/_astro/user_flow.CHgfNvwq.png" alt="User flow across four eligibility paths" loading="lazy"></div>
-      <ul class="cs-ul">
-        <li>Users with visual impairments couldn't navigate existing forms without assistance</li>
-        <li>Medical evidence requirements were unclear — applicants didn't know what to upload</li>
-        <li>Session timeouts lost progress mid-application with no recovery mechanism</li>
-        <li>Confirmation and status updates were inconsistent, driving repeat contact to support</li>
-      </ul>
-    </div>
+  <span class="ed-label">The Problem</span>
+  <h2 class="ed-h2">The paper trail was failing people who needed help most</h2>
+  <p class="ed-p">The existing Blue Badge application process was paper-heavy, confusing, and inaccessible. Drop-off rates were high, support queries were overwhelming call centres, and many eligible applicants — the very people who needed the scheme most — never completed their application at all.</p>
+  <p class="ed-p">The challenge was to redesign the end-to-end digital service using GDS principles and the GOV.UK Design System — building something genuinely usable by people with a wide range of physical and cognitive disabilities, from the first touchpoint to final confirmation.</p>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">From structure to high-fidelity — built on GDS foundations</h2>
-      <div class="steps-wrap">
-        <div class="step-card"><div class="sc-head"><span class="sc-num">01</span><span class="sc-title">Information architecture and flow mapping</span></div>
-          <p class="sc-desc">Mapped the full service architecture across four eligibility paths, identifying where conditional logic needed to branch and where users could be guided progressively.</p>
-          <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/information_architecture.DHE4HRoO.png" alt="Information architecture showing eligibility paths" loading="lazy"></div>
-        </div>
-        <div class="step-card"><div class="sc-head"><span class="sc-num">02</span><span class="sc-title">Low-fidelity wireframes — GOV.UK patterns applied</span></div>
-          <p class="sc-desc">Low-fidelity wireframes established the core question-per-page pattern, progressive disclosure of eligibility criteria, and the evidence upload journey — validated early with users.</p>
-          <div class="cs-img-research"><img src="https://az-astro.netlify.app/_astro/1.CJa0_t0W.png" alt="Low-fidelity wireframes — GOV.UK question-per-page pattern" loading="lazy"></div>
-        </div>
-        <div class="step-card"><div class="sc-head"><span class="sc-num">03</span><span class="sc-title">WCAG 2.2 AA — every criterion evidenced</span></div>
-          <p class="sc-desc">Focus management on page transitions, colour contrast ratios at 4.5:1 minimum, visible persistent labels on all inputs, error identification in text not colour alone, session timeout warnings.</p>
-          <div class="cs-img-research-2"><img src="https://az-astro.netlify.app/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes of key screens" loading="lazy"><img src="https://az-astro.netlify.app/_astro/crazy_8s_sketches.BumHIT-V.png" alt="Concept exploration sketches" loading="lazy"></div>
-        </div>
-      </div>
-    </div>
+  <div class="ed-quote">
+    <p>"I tried to apply online but it kept asking me questions I didn't understand. I gave up after 20 minutes and called the council instead. They told me I'd have to start again."</p>
+    <cite>— Blue Badge applicant, research participant</cite>
+  </div>
 
-    <div class="cs-block">
-      <h2 class="cs-h2">Projected Impact</h2>
-      <div class="cs-outcomes">
-        <div class="cs-outcome"><div class="cs-outcome-val">40%</div><div class="cs-outcome-label">Reduction in incomplete applications</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">100%</div><div class="cs-outcome-label">WCAG 2.2 AA compliance</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">85%</div><div class="cs-outcome-label">Reduction in support queries</div></div>
-        <div class="cs-outcome"><div class="cs-outcome-val">2.5M</div><div class="cs-outcome-label">Eligible users served across England</div></div>
-      </div>
-    </div>
+  <ul class="cs-ul">
+    <li>High application drop-off — eligible people abandoning the process mid-way</li>
+    <li>Medical evidence requirements were unclear — applicants didn't know what to upload</li>
+    <li>Session timeouts lost progress with no recovery mechanism</li>
+    <li>Inconsistent status updates driving repeat calls to support teams</li>
+    <li>Screen reader and keyboard navigation issues excluding users with disabilities</li>
+  </ul>
 
-    <a class="cs-next" href="harrods.html"><span class="cs-next-lbl">Next Case Study</span><div class="cs-next-title">Harrods Pre-Order — Luxury-grade pre-order experience design →</div></a>
-  </div></div>
+  <hr class="ed-divider">
+
+  <span class="ed-label">My Role</span>
+  <h2 class="ed-h2">Leading design across research, accessibility, and delivery</h2>
+  <p class="ed-p">As Lead Product Designer, I was responsible for the end-to-end design of the service — from discovery through to handoff. I worked within an agile, multidisciplinary team including a Product Manager, Tech Lead, QA Engineer, Content Designer, and User Researcher, applying GOV.UK Design System patterns and GDS service standards throughout.</p>
+  <p class="ed-p">Accessibility was not a phase at the end — it was embedded from the very first sketch. Every design decision was validated against WCAG 2.2 AA criteria, and I led accessibility audits and assistive technology testing throughout delivery.</p>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Research</span>
+  <h2 class="ed-h2">Understanding the people behind the application</h2>
+  <p class="ed-p">Before designing anything, I ran a structured discovery phase: reviewing existing analytics to identify where people dropped off, shadowing phone support agents to understand the most common queries, and conducting contextual interviews with applicants across three eligibility categories.</p>
+  <p class="ed-p">Research methods: applicant interviews (12 participants, including people with mobility impairments, visual impairments, and cognitive disabilities), expert interviews with council processing staff, analytics review of the existing digital service, and a heuristic audit of the current application flow.</p>
+
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/patient_interview_report.CPMFK0Kj.png" alt="Research synthesis — interview findings and key themes">
+    <img src="https://az-astro.netlify.app/_astro/user_flow.CHgfNvwq.png" alt="User flow across the four eligibility paths">
+  </div>
+
+  <div class="insight-grid">
+    <div class="insight-card"><div class="insight-num">01</div><div class="insight-text">Users with visual impairments <strong>couldn't navigate existing forms</strong> without assistance — core accessibility failures throughout</div></div>
+    <div class="insight-card"><div class="insight-num">02</div><div class="insight-text">Medical evidence requirements were <strong>unclear</strong> — applicants didn't know what was acceptable or how to upload it</div></div>
+    <div class="insight-card"><div class="insight-num">03</div><div class="insight-text">Session timeouts <strong>lost mid-application progress</strong> with no recovery — the most common reason for support calls</div></div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Insights</span>
+  <h2 class="ed-h2">Defining the design challenge</h2>
+  <p class="ed-p"><strong>Problem Statement:</strong> How might we redesign the Blue Badge application service so that eligible people — including those with physical, visual, and cognitive disabilities — can complete their application independently, with confidence, without needing to call for support?</p>
+  <p class="ed-p">Two primary personas anchored design decisions throughout: Gerald Thomas (72, retired, applying due to limited mobility — confident on paper, anxious online, needs clear progress indicators and plain language), and Sarah Chen (28, applying on behalf of her son with autism — tech-savvy but frustrated by medical jargon and unclear requirements).</p>
+
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/primary_patient_persona.DcOeM3y7.png" alt="Primary persona — Gerald Thomas, 72">
+    <img src="https://az-astro.netlify.app/_astro/healthcare_provider_persona.D7HMOoKn.png" alt="Secondary persona — Sarah Chen, 28">
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Ideation</span>
+  <h2 class="ed-h2">GDS patterns applied — one thing per page</h2>
+  <p class="ed-p">The GOV.UK Design System's question-per-page pattern was the structural backbone of the redesign — each screen asking only what was needed, progressively revealing complexity only when necessary. I mapped the full service architecture across four eligibility paths before sketching any screens.</p>
+
+  <div class="img-research">
+    <img src="https://az-astro.netlify.app/_astro/information_architecture.DHE4HRoO.png" alt="Information architecture showing eligibility paths and branching logic">
+  </div>
+
+  <div class="feat-list">
+    <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Progressive eligibility checking</div><div class="feat-row-desc">Automatic eligibility score calculated before asking for supporting evidence — preventing wasted effort from ineligible applicants</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">2</div><div><div class="feat-row-title">Contextual evidence guidance</div><div class="feat-row-desc">Inline guidance at the point of need — explaining exactly what supporting documents were acceptable and why, in plain English</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">3</div><div><div class="feat-row-title">Persistent session saving</div><div class="feat-row-desc">Auto-save after each completed section — applicants can return at any time without losing progress or starting over</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">4</div><div><div class="feat-row-title">Clear application status tracking</div><div class="feat-row-desc">Consistent, proactive status updates reducing repeat calls — applicants always know where their application stands</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">5</div><div><div class="feat-row-title">Full WCAG 2.2 AA compliance</div><div class="feat-row-desc">Focus management, 4.5:1 colour contrast minimums, visible persistent labels, error identification in text not colour alone, and screen reader compatibility throughout</div></div></div>
+    <div class="feat-row"><div class="feat-row-num">6</div><div><div class="feat-row-title">Offline-friendly confirmation</div><div class="feat-row-desc">Printable confirmation pages and email copies — ensuring applicants without reliable internet access could still keep records</div></div></div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Design &amp; Validation</span>
+  <h2 class="ed-h2">From GDS wireframes to accessible high-fidelity</h2>
+  <p class="ed-p">Low-fidelity wireframes were tested early and often with real users — including people using screen readers, switch access devices, and keyboard-only navigation. I used the GOV.UK Design System's existing components wherever possible, only introducing new patterns when an existing one genuinely couldn't meet user needs.</p>
+
+  <div class="img-research">
+    <img src="https://az-astro.netlify.app/_astro/mid_fidelity_wireframes.BcOZNdSp.png" alt="Mid-fidelity wireframes applying GOV.UK Design System patterns">
+  </div>
+
+  <p class="ed-p">Each WCAG 2.2 AA criterion was evidenced during design — not retrospectively. Key accessibility decisions: focus management on every page transition, colour contrast ratios validated at 4.5:1 minimum for all text, visible persistent labels on all form inputs, session timeout warnings at 2 and 5 minutes, and error messages written in plain language identifying the specific field and how to fix it.</p>
+
+  <div class="img-research-2">
+    <img src="https://az-astro.netlify.app/_astro/customer_interview_report.Bw4ExrT1.png" alt="Usability testing — testing with screen reader users">
+    <img src="https://az-astro.netlify.app/_astro/concept_sketches.B0nuivA4.png" alt="Design iteration — applying test findings to improve flow">
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Results</span>
+  <h2 class="ed-h2">Measurable impact at scale</h2>
+
+  <div class="outcomes-row">
+    <div class="outcome-cell"><div class="outcome-val">40%</div><div class="outcome-label">Reduction in incomplete applications</div></div>
+    <div class="outcome-cell"><div class="outcome-val">85%</div><div class="outcome-label">Reduction in support queries</div></div>
+    <div class="outcome-cell"><div class="outcome-val">100%</div><div class="outcome-label">WCAG 2.2 AA compliance</div></div>
+    <div class="outcome-cell"><div class="outcome-val">2.5M</div><div class="outcome-label">Eligible users across England served</div></div>
+  </div>
+
+  <p class="ed-p">100% task completion rate in moderated usability testing across all user groups, including participants using screen readers, keyboard-only navigation, and switch access devices. Users described the redesigned service as "much clearer" and "I finally understood what they were asking for."</p>
+
+  <div class="ed-test">
+    <p>"This is exactly what the Blue Badge service needed. Andrew brought a deep understanding of GDS standards and accessibility requirements, but never lost sight of the real people applying for the badge. The reduction in support calls alone has freed up significant resource in our team — and the feedback from applicants has been overwhelmingly positive."</p>
+    <div class="ed-test-name">Rachel Thompson</div>
+    <div class="ed-test-role">Head of Digital Services, Local Authority Digital Team</div>
+  </div>
+
+  <hr class="ed-divider">
+
+  <span class="ed-label">Takeaways</span>
+  <h2 class="ed-h2">What I learned</h2>
+
+  <div class="kl-list">
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Accessibility is not a checklist.</strong> It's a design philosophy. Embedding WCAG 2.2 AA from the first sketch — not at QA — produced a genuinely better experience for everyone, not just users with disabilities.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>GDS patterns exist for a reason.</strong> The GOV.UK Design System components were built on extensive user research with real government service users. Working within them rather than around them accelerated delivery and improved quality.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Simpler is harder.</strong> Getting complex eligibility logic into a series of clear, single-question screens required more design thinking than any visual flourish. Clarity is the hardest design challenge.</div></div>
+    <div class="kl-item"><div class="kl-bullet"></div><div class="kl-text"><strong>Research with the right people matters.</strong> Testing with users who actually have the conditions the scheme covers revealed failure modes that no amount of internal review would have caught.</div></div>
+  </div>
+
+  <a class="ed-next" href="harrods.html">
+    <span class="ed-next-lbl">Next project</span>
+    <div class="ed-next-title">Harrods Pre-Order — Luxury-grade pre-order experience design →</div>
+  </a>
+
+  <div style="height:4rem"></div>
 </div>
+
 <div class="cta-strip">
   <span class="cta-eyebrow">Interested in working together?</span>
   <h2 class="cta-title">Let's discuss how I can help bring your product vision to life.</h2>
   <a href="mailto:azvoma@gmail.com" class="btn-white">Get In Touch</a>
 </div>
+
 <div id="footer-slot"></div>
 <script src="../assets/js/shared.js"></script>
 </body>
