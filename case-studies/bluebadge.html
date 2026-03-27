@@ -116,6 +116,16 @@
   .phone-device{flex:0 0 140px}
   .phone-screen{height:270px}
 }
+
+/* ── Design process strip — shared across all case studies ── */
+.dp-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0 0}
+.dp-strip .dp-s{background:var(--white);padding:.9rem .5rem;text-align:center;position:relative}
+.dp-strip .dp-s.active{background:var(--blue-light)}
+.dp-s-num{font-size:.62rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem;letter-spacing:.05em}
+.dp-s-lbl{font-size:.72rem;font-weight:600;color:var(--text);line-height:1.2}
+
+.dp-step-marker{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.dp-step-badge{font-size:.72rem;font-weight:700;color:var(--white);background:var(--blue);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:.02em}
 </style>
 </head>
 <body>
@@ -152,10 +162,12 @@
     <img src="../assets/images/bluebadge_hero.png" alt="Blue Badge Digital Companion — GOV.UK service design screens showing application, evidence upload, and confirmation">
   </div>
 
+  <div class="dp-strip"><div class="dp-s"><span class="dp-s-num">01</span><div class="dp-s-lbl">Discovery</div></div><div class="dp-s"><span class="dp-s-num">02</span><div class="dp-s-lbl">Insights</div></div><div class="dp-s"><span class="dp-s-num">03</span><div class="dp-s-lbl">Ideation</div></div><div class="dp-s"><span class="dp-s-num">04</span><div class="dp-s-lbl">Design</div></div><div class="dp-s"><span class="dp-s-num">05</span><div class="dp-s-lbl">Validation</div></div></div>
+
   <hr class="ed-divider">
 
   <!-- ── THE PROBLEM ── -->
-  <span class="ed-label">The Problem</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">01</span><span class="ed-label" style="display:inline">The Problem</span></div>
   <h2 class="ed-h2">The paper trail was failing the people who needed help most</h2>
   <p class="ed-p">The Blue Badge scheme provides parking concessions to around 2.5 million disabled people in England. Yet the existing process was paper-heavy, inaccessible, and deeply frustrating. Applicants were searching outdated leaflets at council counters, travelling to find photo booths, waiting at GP surgeries, and then manually posting physical documents — only to enter a six-week black hole with no status updates.</p>
   <p class="ed-p">Historically, <strong>20% of applications were lost in the mail or rejected due to unclear handwriting</strong>. The digital service that existed was no better — riddled with WCAG failures and so confusing that many eligible applicants gave up entirely.</p>
@@ -181,23 +193,20 @@
   </ul>
 
 
-  <hr class="ed-divider">
 
-  <!-- ── DESIGN PROCESS ── -->
-  <span class="ed-label">Design Process</span>
-  <h2 class="ed-h2">Research-led, iteratively tested</h2>
-  <div class="design-process-strip">
-    <div class="dp-step"><span class="dp-num">01</span><div class="dp-label">Discovery</div></div>
-    <div class="dp-step"><span class="dp-num">02</span><div class="dp-label">Insights</div></div>
-    <div class="dp-step"><span class="dp-num">03</span><div class="dp-label">Ideation</div></div>
-    <div class="dp-step"><span class="dp-num">04</span><div class="dp-label">Design</div></div>
-    <div class="dp-step"><span class="dp-num">05</span><div class="dp-label">Validation</div></div>
+
+  <!-- User personas -->
+  <div class="img-research" style="margin-top:1.5rem">
+    <img src="../assets/images/bb_personas.png" alt="User personas: Gerald Thompson, 72, motor-impaired veteran — and Sarah Chen, 28, tech-savvy student and caregiver">
   </div>
+  <p class="img-caption">Gerald Thompson (72) — severe arthritis, uses trackball mouse, prefers physical mail. Goal: complete forms independently with dignity. Sarah Chen (28) — tech-savvy caregiver, frequent mobile user. Goal: efficiently organise tasks for family.</p>
+
+  <hr class="ed-divider">
 
   <hr class="ed-divider">
 
   <!-- ── RESEARCH ── -->
-  <span class="ed-label">Research</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">02</span><span class="ed-label" style="display:inline">Research</span></div>
   <h2 class="ed-h2">Understanding the people behind the application</h2>
   <p class="ed-p">Before any design work began, I ran a structured discovery phase: reviewing analytics to identify drop-off points, shadowing council phone support agents, and conducting contextual interviews with applicants across three eligibility categories — including participants with mobility impairments, visual impairments, and cognitive disabilities.</p>
   <p class="ed-p">I coordinated stakeholder alignment across council processing staff, DfT policy teams, and accessibility specialists — translating diverse requirements into a single, coherent design direction. I also conducted a full heuristic audit of the existing service, mapping every failure point against WCAG 2.2 AA criteria.</p>
@@ -221,7 +230,7 @@
   <hr class="ed-divider">
 
   <!-- ── IDEATION ── -->
-  <span class="ed-label">Ideation</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">03</span><span class="ed-label" style="display:inline">Ideation</span></div>
   <h2 class="ed-h2">GOV.UK Design System as the structural backbone</h2>
   <p class="ed-p">The GOV.UK Design System's question-per-page pattern was the structural foundation of the redesign — each screen presenting only what was needed, progressively revealing complexity only when necessary. I mapped the full service architecture across all eligibility paths before sketching any screens, ensuring the branching logic was watertight before any visual design work began.</p>
 
@@ -251,7 +260,7 @@
   <hr class="ed-divider">
 
   <!-- ── DESIGN & VALIDATION ── -->
-  <span class="ed-label">Design &amp; Validation</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">04</span><span class="ed-label" style="display:inline">Design &amp; Validation</span></div>
   <h2 class="ed-h2">From GDS wireframes to accessible high-fidelity</h2>
   <p class="ed-p">Low-fidelity wireframes were tested early with real users — including participants using screen readers, switch access devices, and keyboard-only navigation — before any high-fidelity design work began. I used GOV.UK Design System components wherever they met user needs, introducing new patterns only where existing ones genuinely couldn't serve the user.</p>
 
@@ -303,7 +312,7 @@
   <hr class="ed-divider">
 
   <!-- ── RESULTS ── -->
-  <span class="ed-label">Results</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">05</span><span class="ed-label" style="display:inline">Results</span></div>
   <h2 class="ed-h2">Measurable impact for 2.5 million eligible users</h2>
 
   <div class="outcomes-row">

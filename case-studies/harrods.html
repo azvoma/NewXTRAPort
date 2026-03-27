@@ -194,6 +194,16 @@
 }
 
 .cs-outcome-lead{font-size:1.05rem;font-weight:600;color:var(--blue);line-height:1.65;max-width:640px;margin:0 0 1.25rem;border-left:3px solid var(--blue);padding:.6rem 1rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
+
+/* ── Design process strip — shared across all case studies ── */
+.dp-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0 0}
+.dp-strip .dp-s{background:var(--white);padding:.9rem .5rem;text-align:center;position:relative}
+.dp-strip .dp-s.active{background:var(--blue-light)}
+.dp-s-num{font-size:.62rem;font-weight:700;color:var(--blue);display:block;margin-bottom:.2rem;letter-spacing:.05em}
+.dp-s-lbl{font-size:.72rem;font-weight:600;color:var(--text);line-height:1.2}
+
+.dp-step-marker{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.dp-step-badge{font-size:.72rem;font-weight:700;color:var(--white);background:var(--blue);width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;letter-spacing:.02em}
 </style>
 </head>
 <body>
@@ -234,7 +244,7 @@
   <hr class="ed-divider">
 
   <!-- ── THE PROBLEM ── -->
-  <span class="ed-label">The Problem</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">01</span><span class="ed-label" style="display:inline">The Problem</span></div>
   <h2 class="ed-h2">A missing capability costing loyalty and revenue</h2>
   <p class="ed-p">Harrods had no pre-order capability. For limited-edition and high-demand products — where exclusivity and guaranteed access are core to the luxury proposition — this was a critical gap. High-intent customers were repeatedly missing launches, leading to frustration, repeated availability-checking, and missed conversion.</p>
   <p class="ed-p">The business was also unable to forecast demand for limited releases, making inventory management reactive rather than planned.</p>
@@ -249,7 +259,7 @@
   <hr class="ed-divider">
 
   <!-- ── RESEARCH ── -->
-  <span class="ed-label">Research</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">02</span><span class="ed-label" style="display:inline">Research</span></div>
   <h2 class="ed-h2">Understanding the luxury mindset</h2>
   <p class="ed-p">I used qualitative interviews with Harrods customers across segments, mapped limited-edition purchase journeys using analytics to identify friction and drop-off moments, and conducted competitive analysis of luxury pre-order patterns.</p>
 
@@ -273,7 +283,7 @@
   <hr class="ed-divider">
 
   <!-- ── IDEATION ── -->
-  <span class="ed-label">Ideation</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">03</span><span class="ed-label" style="display:inline">Ideation</span></div>
   <h2 class="ed-h2">From problems to elegant solutions</h2>
   <p class="ed-p">Using Crazy 8s and rapid sketching, I explored different reservation models, then applied a value-vs-effort matrix to prioritise concepts that enhanced exclusivity and integrated seamlessly into Harrods' existing shopping flows.</p>
 
@@ -302,7 +312,7 @@
   <hr class="ed-divider">
 
   <!-- ── SOLUTION ── -->
-  <span class="ed-label">Solution</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">04</span><span class="ed-label" style="display:inline">Solution</span></div>
   <h2 class="ed-h2">Design & validation</h2>
   <p class="ed-p">I started with low-fidelity wireframes to validate flows, hierarchy, and terminology before applying any polish. Accessibility (WCAG 2.2 AA) was baked in from the start — not added after.</p>
 
@@ -365,7 +375,7 @@
   <hr class="ed-divider">
 
   <!-- ── RESULTS ── -->
-  <span class="ed-label">Results</span>
+  <div class="dp-step-marker"><span class="dp-step-badge">05</span><span class="ed-label" style="display:inline">Results</span></div>
   <h2 class="ed-h2">Measurable impact, luxury experience intact</h2>
 
   <div class="outcomes-row">
