@@ -7,7 +7,7 @@
     '<ul class="nav-links">' +
     '<li><a href="' + root + 'index.html" data-p="home">Home</a></li>' +
     '<li><a href="' + root + 'case-studies/index.html" data-p="cases">Case Studies</a></li>' +
-    '<li><a href="' + root + 'index.html#about">About Me</a></li>' +
+    '<li><a href="' + root + 'about.html">About Me</a></li>' +
     '<li><a href="' + root + 'index.html#process">Process</a></li>' +
     '</ul>' +
     '<div class="nav-cta"><a href="mailto:azvoma@gmail.com">Contact</a></div>' +
@@ -21,7 +21,7 @@
     '<div class="footer-col"><h4>Quick Links</h4><ul>' +
     '<li><a href="' + root + 'index.html">Home</a></li>' +
     '<li><a href="' + root + 'case-studies/index.html">Case Studies</a></li>' +
-    '<li><a href="' + root + 'index.html#about">About Me</a></li>' +
+    '<li><a href="' + root + 'about.html">About Me</a></li>' +
     '<li><a href="' + root + 'index.html#process">Process</a></li>' +
     '</ul></div>' +
     '<div class="footer-col"><h4>Get In Touch</h4><ul>' +

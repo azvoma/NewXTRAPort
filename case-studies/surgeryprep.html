@@ -93,6 +93,8 @@
   .img-3{grid-template-columns:1fr 1fr}
   .sprint-bar{grid-template-columns:repeat(3,1fr)}
 }
+
+.cs-outcome-lead{font-size:1.05rem;font-weight:600;color:var(--blue);line-height:1.65;max-width:640px;margin:0 0 1.25rem;border-left:3px solid var(--blue);padding:.6rem 1rem;background:var(--blue-light);border-radius:0 var(--r-lg) var(--r-lg) 0}
 </style>
 </head>
 <body>
@@ -107,6 +109,7 @@
       <span class="cs-pill green">100% Task Completion</span><span class="cs-pill green">WCAG 2.2 AA</span>
     </div>
     <h1 class="cs-page-title">SurgeryPrep</h1>
+    <p class="cs-outcome-lead">100% task completion in testing. A mobile companion that measurably reduced pre-surgery anxiety calls to nursing staff — because patients finally had the right information, at the right moment.</p>
     <p style="font-size:1.1rem;color:var(--text-2);line-height:1.7;max-width:640px;margin-top:.5rem">Personalised surgical guidance to reduce patient anxiety and clinical overload — a mobile companion that guides patients through their surgical journey with clear, timely, and emotionally supportive information.</p>
   </div>
 
@@ -169,6 +172,7 @@
   <span class="ed-label">Ideation</span>
   <h2 class="ed-h2">From problems to solutions</h2>
   <p class="ed-p">Over 20 concepts were explored through Crazy 8s and brainstorming sessions, evaluated against a value vs. effort matrix. Features such as live chat and real-time clinician messaging were intentionally excluded due to clinical risk, scalability concerns, and regulatory complexity. Focus remained on clarity, safety, and feasibility.</p>
+  <p class="ed-p"><strong>The key decision:</strong> Removing live clinician chat was a deliberate design choice, not a technical limitation. Every time we tested concepts with a live messaging feature, participants — especially patients — began treating it as a hotline. That would have created clinical risk, overwhelmed nursing staff, and ultimately broken the product. The best decision I made on this project was knowing what not to build. Patients needed clarity and reassurance, not a direct line to a busy surgeon.</p>
   <div class="img-research"><img src="../assets/images/surgeryprep_concept_sketches.png" alt="Concept sketches showing initial ideation for SurgeryPrep features"></div>
   <div class="feat-list">
     <div class="feat-row"><div class="feat-row-num">1</div><div><div class="feat-row-title">Personalised Surgery Timeline</div><div class="feat-row-desc">Dynamic guidance tailored to surgery type and recovery stage — the right information at the right moment</div></div></div>
